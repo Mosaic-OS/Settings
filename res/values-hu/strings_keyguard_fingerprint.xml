@@ -1,0 +1,4 @@
+<resources>
+    <string name="keyguard_fingerprint_title">Használja a képernyő feloldásához</string>
+    <string name="keyguard_fingerprint_summary">Kikapcsolt állapotban az ujjlenyomat-feloldás továbbra is használható az alkalmazásokban</string>
+</resources>

@@ -213,7 +213,7 @@ public class ApplicationFeatureProviderImpl implements ApplicationFeatureProvide
                 "app.vanadium.webview",
 
                 // Only bundled camera can handle some of camera intents
-                "app.grapheneos.camera",
+                "app.mosaicos.camera",
 
                 // Disabling GmsCompat app breaks the GmsCompat layer
                 com.android.internal.gmscompat.GmsCompatApp.PKG_NAME,

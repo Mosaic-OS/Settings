@@ -1,0 +1,77 @@
+package com.android.settings.custom.preference;
+
+import android.content.Context;
+import android.provider.Settings;
+import android.util.AttributeSet;
+
+import androidx.preference.SwitchPreferenceCompat;
+
+public class CustomSwitchPreference extends SwitchPreferenceCompat {
+
+    public CustomSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        init();
+    }
+
+    public CustomSwitchPreference(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
+    public CustomSwitchPreference(Context context) {
+        super(context);
+        init();
+    }
+
+    private void init() {
+        setPersistent(false);
+    }
+
+    @Override
+    protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
+        String key = getKey();
+        if (key == null) {
+            super.onSetInitialValue(restoreValue, defaultValue);
+            return;
+        }
+
+        try {
+            int value = Settings.Secure.getInt(getContext().getContentResolver(), key);
+            setChecked(value == 1);
+        } catch (Settings.SettingNotFoundException e) {
+            // Mirror the framework SwitchPreference convention of defaulting OFF when no
+            // android:defaultValue is supplied, rather than silently enabling the feature.
+            boolean defValue = defaultValue != null ? (Boolean) defaultValue : false;
+            setChecked(defValue);
+            persistBoolean(defValue);
+        }
+    }
+
+    @Override
+    protected boolean persistBoolean(boolean value) {
+        String key = getKey();
+        if (key == null) return false;
+
+        try {
+            Settings.Secure.putInt(getContext().getContentResolver(), 
+                key, value ? 1 : 0);
+            return true;
+        } catch (Exception e) {
+            android.util.Log.e("CustomSwitch", "Error persisting value", e);
+            return false;
+        }
+    }
+
+    @Override
+    protected boolean getPersistedBoolean(boolean defaultReturnValue) {
+        String key = getKey();
+        if (key == null) return defaultReturnValue;
+
+        try {
+            int value = Settings.Secure.getInt(getContext().getContentResolver(), key);
+            return value == 1;
+        } catch (Settings.SettingNotFoundException e) {
+            return defaultReturnValue;
+        }
+    }
+}

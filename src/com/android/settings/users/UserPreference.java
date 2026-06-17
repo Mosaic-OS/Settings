@@ -29,6 +29,11 @@ import androidx.preference.PreferenceViewHolder;
 
 import com.android.settings.R;
 import com.android.settingslib.RestrictedPreference;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
 
 import java.util.Comparator;
 
@@ -60,6 +65,20 @@ public class UserPreference extends RestrictedPreference {
 
     private int mSerialNumber = -1;
     private int mUserId = USERID_UNKNOWN;
+    
+    protected interface OnPreferenceLongPressListener {
+        void onLongPress(View anchor);
+    }
+
+    private OnPreferenceLongPressListener mLongPressListener;
+
+    // UI thread handler for delayed long-press
+    private final Handler mUiHandler = new Handler(Looper.getMainLooper());
+    private Runnable mPendingLongPressRunnable;
+    private long mLongPressTimeoutMs = 5000L;
+    private float mInitialX;
+    private float mInitialY;
+    private int mTouchSlop = -1;
 
     @Nullable private OnClickListener mEditClickListener;
 
@@ -100,6 +119,53 @@ public class UserPreference extends RestrictedPreference {
         if (editButton != null) {
             editButton.setOnClickListener(mEditClickListener);
         }
+        
+        final View itemView = view.itemView;
+        if (mTouchSlop < 0) {
+            mTouchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
+        }
+        itemView.setOnTouchListener(null);
+        if (mLongPressListener == null) {
+            return;
+        }
+
+        itemView.setOnTouchListener((v, event) -> {
+            switch (event.getActionMasked()) {
+                case MotionEvent.ACTION_DOWN:
+                    mInitialX = event.getX();
+                    mInitialY = event.getY();
+                    if (mPendingLongPressRunnable != null) {
+                        mUiHandler.removeCallbacks(mPendingLongPressRunnable);
+                    }
+                    mPendingLongPressRunnable = () -> {
+                        if (mLongPressListener != null) {
+                            mLongPressListener.onLongPress(itemView);
+                        }
+                    };
+                    mUiHandler.postDelayed(mPendingLongPressRunnable, mLongPressTimeoutMs);
+                    break;
+
+                case MotionEvent.ACTION_MOVE:
+                    float dx = Math.abs(event.getX() - mInitialX);
+                    float dy = Math.abs(event.getY() - mInitialY);
+                    if (dx > mTouchSlop || dy > mTouchSlop) {
+                        if (mPendingLongPressRunnable != null) {
+                            mUiHandler.removeCallbacks(mPendingLongPressRunnable);
+                            mPendingLongPressRunnable = null;
+                        }
+                    }
+                    break;
+
+                case MotionEvent.ACTION_UP:
+                case MotionEvent.ACTION_CANCEL:
+                    if (mPendingLongPressRunnable != null) {
+                        mUiHandler.removeCallbacks(mPendingLongPressRunnable);
+                        mPendingLongPressRunnable = null;
+                    }
+                    break;
+            }
+            return false;
+        });
     }
 
     private int getSerialNumber() {
@@ -126,6 +192,11 @@ public class UserPreference extends RestrictedPreference {
      */
     public void setOnEditClickListener(@Nullable OnClickListener listener) {
         mEditClickListener = listener;
+        notifyChanged();
+    }
+    
+    public void setOnPreferenceLongPressListener(@Nullable OnPreferenceLongPressListener listener) {
+        mLongPressListener = listener;
         notifyChanged();
     }
 }

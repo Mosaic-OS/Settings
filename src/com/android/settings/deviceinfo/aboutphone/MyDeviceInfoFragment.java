@@ -22,6 +22,8 @@ import android.app.Activity;
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
+import androidx.preference.Preference;
 import android.content.pm.UserInfo;
 import android.os.Bundle;
 import android.os.UserManager;
@@ -124,6 +126,8 @@ public class MyDeviceInfoFragment extends DashboardFragment
     public void onStart() {
         super.onStart();
         initHeader();
+        
+        registerMosaicPreferenceClick();
     }
 
     @Override
@@ -284,4 +288,38 @@ public class MyDeviceInfoFragment extends DashboardFragment
                             null /* lifecycle */);
                 }
             };
+            
+
+    private void registerMosaicPreferenceClick() {
+        if (getPreferenceScreen() == null) return;
+
+        Preference pref = getPreferenceScreen().findPreference("mosaic_version");
+        if (pref == null) return;
+
+        pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                final String targetPackage = "app.mosaicos.info";
+
+                try {
+                    Intent launchIntent = requireContext().getPackageManager()
+                            .getLaunchIntentForPackage(targetPackage);
+
+                    if (launchIntent != null) {
+                        launchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(launchIntent);
+                    } else {
+                        Toast.makeText(requireContext(),
+                                R.string.app_not_installed,
+                                Toast.LENGTH_SHORT).show();
+                    }
+                } catch (Exception e) {
+                    Toast.makeText(requireContext(),
+                            R.string.app_not_installed,
+                            Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        });
+    }
 }

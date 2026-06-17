@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/scrim_customization_title">
+
+    <!-- Blur Settings Category -->
+    <PreferenceCategory
+        android:key="blur_settings"
+        android:title="@string/scrim_blur_category">
+
+        <com.android.settings.custom.preference.CustomSeekBarPreference
+            android:key="background_blur_radius"
+            android:title="@string/background_blur_title"
+            android:max="150"
+            android:min="0"
+            android:defaultValue="76" />
+
+    </PreferenceCategory>
+
+    <!-- Transparency Settings Category -->
+    <PreferenceCategory
+        android:key="transparency_settings"
+        android:title="@string/scrim_transparency_category">
+
+        <com.android.settings.custom.preference.CustomSeekBarPreference
+            android:key="background_transparency"
+            android:title="@string/background_transparency_title"
+            android:max="100"
+            android:min="0"
+            android:defaultValue="20" />
+
+        <com.android.settings.custom.preference.CustomSeekBarPreference
+            android:key="notification_transparency"
+            android:title="@string/notification_transparency_title"
+            android:max="100"
+            android:min="0"
+            android:defaultValue="50" />
+
+    </PreferenceCategory>
+
+    <!-- Color Settings Category -->
+    <PreferenceCategory
+        android:key="color_settings"
+        android:title="@string/scrim_color_category">
+
+        <com.android.settings.custom.preference.CustomSwitchPreference
+            android:key="background_accent"
+            android:title="@string/background_accent_title"
+            android:summary="@string/background_accent_summary"
+            android:defaultValue="true" />
+
+        <com.android.settings.custom.preference.CustomSwitchPreference
+            android:key="notification_accent"
+            android:title="@string/notification_accent_title"
+            android:summary="@string/notification_accent_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <!-- Reset Button -->
+    <Preference
+        android:key="reset_scrim_settings"
+        android:title="@string/reset_scrim_settings"
+        android:summary="@string/reset_scrim_settings_summary" />
+
+</PreferenceScreen>

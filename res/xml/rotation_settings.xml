@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="rotation_settings_screen"
+    android:title="@string/accelerometer_title">
+    
+    <com.android.settingslib.widget.MainSwitchPreference
+        android:key="auto_rotate_switch"
+        android:title="@string/accelerometer_title"
+        android:defaultValue="false"
+        android:persistent="false" />
+        
+    <PreferenceCategory
+        android:title="@string/display_rotation_modes_heading"
+        android:summary="@string/display_rotation_modes_summary"
+        android:key="rotation_modes_category" />
+        
+    <CheckBoxPreference
+        android:key="rotation_mode_90"
+        android:title="@string/external_display_rotation_90"
+        android:defaultValue="true"
+        android:persistent="false"
+        android:dependency="auto_rotate_switch" />
+        
+    <CheckBoxPreference
+        android:key="rotation_mode_180"
+        android:title="@string/external_display_rotation_180"
+        android:defaultValue="false"
+        android:persistent="false"
+        android:dependency="auto_rotate_switch" />
+        
+    <CheckBoxPreference
+        android:key="rotation_mode_270"
+        android:title="@string/external_display_rotation_270"
+        android:defaultValue="true"
+        android:persistent="false"
+        android:dependency="auto_rotate_switch" />
+        
+</PreferenceScreen>

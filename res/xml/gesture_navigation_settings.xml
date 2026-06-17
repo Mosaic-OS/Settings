@@ -33,6 +33,38 @@
             settings:buttonPreferenceSize="normal"
             settings:buttonPreferenceType="filled" />
     </PreferenceCategory>
+	
+	<PreferenceCategory
+        android:key="pill_category"
+        android:persistent="false"
+        android:title="@string/pill_category_title">
+
+        <SwitchPreferenceCompat
+            android:key="navigation_bar_pill"
+            android:title="@string/show_navbar_pill_title"
+            android:summary="@string/show_navbar_pill_summary"
+            android:defaultValue="true"
+            settings:controller="com.android.settings.gestures.NavigationBarPillPreferenceController" />
+			
+		<com.android.settingslib.widget.SliderPreference
+            android:key="pill_length_preference"
+            android:title="@string/pill_length_title"
+            android:min="0"
+            android:max="2"
+            settings:textStart="@string/short_label"
+            settings:textEnd="@string/long_label"
+            android:dependency="navigation_bar_pill" />
+			
+		<com.android.settingslib.widget.SliderPreference
+            android:key="pill_height_preference"
+            android:title="@string/pill_height_title"
+            android:min="0"
+            android:max="4"
+            settings:textStart="@string/thin_label"
+            settings:textEnd="@string/thick_label"
+            android:dependency="navigation_bar_pill" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="assistant_gesture_category"
@@ -43,9 +75,8 @@
             android:key="assistant_gesture_corner_swipe"
             android:title="@string/assistant_corner_gesture_title"
             android:summary="@string/assistant_corner_gesture_summary"
-            settings:controller="com.android.settings.gestures.GestureNavigationSettingsAssistController"
-        />
-
+            settings:controller="com.android.settings.gestures.GestureNavigationSettingsAssistController" />
+		
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -471,6 +471,21 @@
     <string name="security_settings_fingerprint_recognition_description" msgid="1805171116182647136">"<xliff:g id="FP_NAME">%1$s</xliff:g> felismerve"</string>
     <string name="setup_fingerprint_enroll_skip_title" msgid="2473807887676247264">"Kihagyja az ujjlenyomatot?"</string>
     <string name="setup_fingerprint_enroll_skip_after_adding_lock_text" msgid="2412645723804450304">"Az ujjlenyomat beállítása csupán 1-2 percet vesz igénybe. Ha kihagyja ezt a lépést, később a beállításokban megadhatja ujjlenyomatát."</string>
+	<string name="biometric_second_factor_pin_choose_header">Másodfokú PIN beállítása</string>
+    <string name="biometric_second_factor_confirm_header">Írja be újra a másodfokú PIN-jét</string>
+    <string name="biometric_second_factor_pin_description">Erre a PIN-kódra az ujjlenyomat mellett lesz szükség, amikor a lezárt képernyőről próbál belépni az eszközbe.</string>
+    <string name="biometric_second_factor_pin_description_empty"></string>
+    <string name="biometric_second_factor_pin_change_failed">Nem sikerült módosítani a másodfokú PIN-kódot!</string>
+    <string name="biometric_second_factor_pin_settings_title">Másodfokú PIN</string>
+    <string name="biometric_second_factor_pin_settings_category_title">Beállítások</string>
+    <string name="biometric_second_factor_pin_change_title">PIN módosítása</string>
+    <string name="biometric_second_factor_pin_delete_title">PIN törlése</string>
+    <string name="biometric_second_factor_pin_delete_confirmation_dialog_title">Biztosan törli a másodfokú PIN-t?</string>
+    <string name="biometric_second_factor_pin_delete_confirmation_dialog_message">Biometrikus feloldás engedélyezése esetén mindig ajánlott egy másodfokú PIN-kódot használni. Ennek törlése csökkenti a készülék biztonságát.</string>
+    <string name="biometric_second_factor_pin_delete_confirmation_dialog_positive_button">Törlés</string>
+    <string name="biometric_second_factor_pin_title">Másodfokú PIN</string>
+    <string name="biometric_second_factor_pin_setup_summary">Beállítás szükséges</string>
+    <string name="biometric_second_factor_pin_empty_summary"></string>
     <string name="security_settings_fingerprint_v2_enroll_introduction_message_setup" msgid="6255210343107484206">"Ha ezt az ikont látja, akkor ujjlenyomatával végezheti el a hitelesítést (például amikor alkalmazásokba jelentkezik be, vagy vásárlást hagy jóvá)."</string>
     <string name="security_settings_fingerprint_v2_enroll_introduction_footer_title_1" msgid="4360262371633254407">"Fontos tudnivalók"</string>
     <string name="security_settings_fingerprint_v2_enroll_introduction_footer_title_2" msgid="2580899232734177771">"Hogyan működik?"</string>
@@ -1383,7 +1398,12 @@
     <string name="accessibility_personal_account_title" msgid="8535265881509557013">"Személyes fiók – <xliff:g id="MANAGED_BY">%s</xliff:g>"</string>
     <string name="search_settings" msgid="7573686516434589771">"Keresés"</string>
     <string name="display_settings" msgid="7197750639709493852">"Megjelenítés"</string>
+    
     <string name="accelerometer_title" msgid="7745991950833748909">"Automatikus képernyőforgatás"</string>
+    <string name="rotation_settings_summary">Forgatási irányok kezelése</string>
+    <string name="display_rotation_modes_summary">A normál álló (0°) tájolás mindig engedélyezett</string>
+    <string name="display_rotation_modes_heading">Forgatási módok</string>
+    
     <string name="auto_rotate_option_off" msgid="2788096269396290731">"Ki"</string>
     <string name="auto_rotate_option_on" msgid="5776678230808498171">"Be"</string>
     <string name="auto_rotate_option_face_based" msgid="3438645484087953174">"Be: Arcalapú"</string>
@@ -1433,6 +1453,7 @@
     <string name="adaptive_sleep_camera_lock_summary" msgid="8417541183603618098">"A kamerának feloldva kell lennie a képernyőfigyelő használatához"</string>
     <string name="auto_rotate_summary_no_permission" msgid="1025061139746254554">"Az arcfelismerés működéséhez kamera-hozzáférés szükséges. Koppintson ide az Eszköz-személyreszabási szolgáltatások engedélyeinek kezeléséhez"</string>
     <string name="auto_rotate_manage_permission_button" msgid="2591146085906382385">"Engedélyek kezelése"</string>
+	<string name="touch_sensitivity_summary">Javítja az érintés érzékelését képernyővédő fólia használatakor</string>
     <string name="night_display_title" msgid="8532432776487216581">"Éjszakai fény"</string>
     <string name="night_display_text" msgid="4789324042428095383">"Az Éjszakai fény borostyánsárga árnyalatúra színezi a képernyőt, hogy gyenge fény mellett se legyen kellemetlen a képernyőre nézni. Emellett az elalvást is megkönnyítheti."</string>
     <string name="night_display_auto_mode_title" msgid="5869128421470824381">"Ütemezés"</string>
@@ -1457,6 +1478,9 @@
     <string name="dark_ui_activation_on_auto" msgid="4824339634784765049">"Bekapcsolás napkeltéig"</string>
     <string name="dark_ui_activation_off_auto" msgid="9136717444658505208">"Kikapcsolás napnyugtáig"</string>
     <string name="dark_ui_title" msgid="3373976268671557416">"Sötét mód"</string>
+	<!-- AMOLED UI -->
+    <string name="dark_mode_amoled_black_title">Fekete téma</string>
+    <string name="dark_mode_amoled_black_summary">Teljesen fekete téma használata a sötét helyett</string>
     <string name="dark_ui_auto_mode_title" msgid="9027528859262295099">"Ütemezés"</string>
     <string name="dark_ui_auto_mode_never" msgid="3980412582267787662">"Soha"</string>
     <string name="dark_ui_auto_mode_auto" msgid="6658909029498623375">"Napnyugtától napkeltéig"</string>
@@ -1473,8 +1497,8 @@
     <string name="dark_ui_summary_on_auto_mode_custom" msgid="2526935680241734784">"Automatikusan kikapcsol a következő időpontban: <xliff:g id="ID_1">%1$s</xliff:g>"</string>
     <string name="dark_ui_summary_on_auto_mode_custom_bedtime" msgid="1976993025762551246">"Automatikusan kikapcsol az alvásidő végén"</string>
     <string name="dark_ui_summary_on_auto_mode_modes" msgid="7769594183411785087">"Kikapcsol, amikor a(z) <xliff:g id="ID_1">%1$s</xliff:g> befejeződik"</string>
-    <string name="dark_ui_text" msgid="4392646155331126666">"A Sötét téma fekete hátteret használ, ezáltal kíméli az akkumulátort bizonyos képernyőkön. A Sötét téma csak a képernyő kikapcsolása után kapcsol be."</string>
-    <string name="dark_ui_text_force_invert" msgid="3776487375947497387">"A sötét háttér használatával kényelmesebbé teheti a képernyő nézését, és egyes képernyőkön csökkentheti az akkumulátorhasználatot. Ha van ütemezése, a téma akkor módosul, amikor a képernyő ki van kapcsolva."</string>
+    <string name="dark_ui_text" msgid="4392646155331126666">"A Sötét téma sötétebb hátteret használ alapvetően. Hogy tovább kímélje az akkumulátort AMOLED képernyőkön, kapcsolja be a fekete témát. A Sötét téma ütemezése csak a képernyő kikapcsolása után kapcsol be."</string>
+    <string name="dark_ui_text_force_invert" msgid="3776487375947497387">"A sötét háttér használatával kényelmesebbé teheti a képernyő nézését, és egyes képernyőkön csökkentheti az akkumulátorhasználatot. Hogy tovább kímélje az akkumulátort AMOLED képernyőkön, kapcsolja be a fekete témát. Ha van ütemezése, a téma akkor módosul, amikor a képernyő ki van kapcsolva."</string>
     <string name="dark_ui_bedtime_footer_summary" msgid="5576501833145170581">"A Sötét téma jelenleg az Alvásidő mód ütemezését követi"</string>
     <string name="dark_ui_bedtime_footer_action" msgid="1493095487994054339">"Az Alvásidő mód beállításai"</string>
     <string name="dark_ui_modes_footer_summary" msgid="8005236983054795213">"{count,plural,offset:2 =0{A módok a sötét témát is bekapcsolhatják}=1{A(z) {mode_1} a sötét témát is bekapcsolja}=2{A(z) {mode_1} és a(z) {mode_2} a sötét témát is bekapcsolja}=3{A(z) {mode_1}, a(z) {mode_2} és a(z) {mode_3} a sötét témát is bekapcsolja}other{A(z) {mode_1}, a(z) {mode_2} és # további a sötét témát is bekapcsolja}}"</string>
@@ -1570,12 +1594,14 @@
     <string name="system_update_settings_list_item_title" msgid="3398346836439366350">"Rendszerfrissítések"</string>
     <string name="system_update_settings_list_item_summary" msgid="6703752298349642101"></string>
     <string name="firmware_version" msgid="1606901586501447275">"Android verziója"</string>
+	<string name="mosaicos_version">MosaicOS verziója</string>
     <string name="security_patch" msgid="4071756145347865382">"Android biztonsági frissítés"</string>
     <string name="model_info" msgid="8997566254717810904">"Modell"</string>
     <string name="hardware_revision" msgid="3454709180861965025">"Hardververzió"</string>
     <string name="manufactured_year" msgid="3401517138700926475">"Gyártás éve"</string>
     <string name="fcc_equipment_id" msgid="6596668314025646129">"Eszközazonosító"</string>
     <string name="baseband_version" msgid="2600182227599835857">"Alapsáv verziója"</string>
+	<string name="bootloader_version">Bootloader verziója</string>
     <string name="kernel_version" msgid="3513538109381366881">"Kernel verziója"</string>
     <string name="build_number" msgid="9009733242117579826">"Buildszám"</string>
     <string name="module_version" msgid="1787518340082046658">"Google Play-rendszerfrissítés"</string>
@@ -2029,6 +2055,7 @@
     <string name="disable_text" msgid="5146002260857428005">"Letiltás"</string>
     <string name="enable_text" msgid="8570798764647110430">"Engedélyezés"</string>
     <string name="clear_user_data_text" msgid="6773186434260397947">"Tárhely törlése"</string>
+	<string name="manage_storage_text">Tárhely kezelése</string>
     <string name="app_factory_reset" msgid="8974044931667015201">"Frissítések eltávolítása"</string>
     <string name="app_restricted_settings_lockscreen_title" msgid="5993061278264872648">"Korlátozott beállítások engedélyezése"</string>
     <string name="auto_launch_enable_text" msgid="8912714475823807798">"Egyes kiválasztott tevékenységek alapértelmezés szerint ebben az alkalmazásban nyílnak meg."</string>
@@ -2359,6 +2386,7 @@
     <string name="user_dict_settings_all_languages" msgid="8563387437755363526">"Minden nyelven"</string>
     <string name="user_dict_settings_more_languages" msgid="5378870726809672319">"További nyelvek…"</string>
     <string name="testing" msgid="6294172343766732037">"Tesztelés"</string>
+	<string name="testing_sim_toolkit">SIM eszköztár</string>
     <string name="keyboard_settings_summary" msgid="9188442758316476986">"Képernyő-billentyűzet, eszközök"</string>
     <string name="keyboard_settings_with_physical_keyboard_summary" msgid="2240779804018260938">"Képernyő-billentyűzet, fizikai billentyűzet, eszközök"</string>
     <string name="builtin_keyboard_settings_title" msgid="5096171620714179661">"Fizikai billentyűzet"</string>
@@ -5144,6 +5172,7 @@
     <string name="preferred_network_mode_evdo_only_summary" msgid="613903666107299289">"Előnyben részesített hálózati mód: csak EvDo"</string>
     <string name="preferred_network_mode_cdma_evdo_gsm_wcdma_summary" msgid="5643603478619124717">"Előnyben részesített hálózati mód: CDMA/EvDo/GSM/WCDMA"</string>
     <string name="preferred_network_mode_lte_summary" msgid="4236015557975544307">"Előnyben részesített hálózati mód: LTE"</string>
+	<string name="preferred_network_mode_lte_only_summary">Előnyben részesített hálózati mód: Csak LTE</string>
     <string name="preferred_network_mode_lte_gsm_wcdma_summary" msgid="1377100995001285751">"Előnyben részesített hálózati mód: GSM/WCDMA/LTE"</string>
     <string name="preferred_network_mode_lte_cdma_evdo_summary" msgid="1221806410911793222">"Előnyben részesített hálózati mód: CDMA+LTE/EVDO"</string>
     <string name="preferred_network_mode_lte_cdma_evdo_gsm_wcdma_summary" msgid="8974263692041299883">"Előnyben részesített hálózati mód: LTE/CDMA/EvDo/GSM/WCDMA"</string>
@@ -5175,6 +5204,11 @@
     <string name="network_5G_recommended" msgid="4769018972369031538">"5G (javasolt)"</string>
     <string name="network_lte" msgid="2449425437381668780">"LTE (javasolt)"</string>
     <string name="network_4G" msgid="9018841362928321047">"4G (javasolt)"</string>
+	<string name="network_lte_only">Csak LTE</string>
+    <string name="network_5g_only">Csak 5G</string>
+    <string name="network_5g_or_lte_only">Csak 5G vagy LTE</string>
+    <string name="network_5g_or_4g_only">Csak 5G vagy 4G</string>
+    <string name="network_4G_only">Csak 4G</string>
     <string name="select_automatically" msgid="2419752566747259155">"Hálózat automatikus kiválasztása"</string>
     <string name="carrier_settings_title" msgid="6959295328730560529">"Szolgáltatói beállítások"</string>
     <string name="cdma_lte_data_service" msgid="6937443423651347345">"Adatszolgáltatás beállítása"</string>
@@ -5997,4 +6031,75 @@
     <string name="safety_center_account_security_search_terms" msgid="3950829613581775913"></string>
     <string name="safety_center_device_finder_search_terms" msgid="452013643838126923"></string>
     <string name="safety_center_system_component_update_search_terms" msgid="3110390275537109543"></string>
+	<string name="app_not_installed">Az Info alkalmazás nincs telepítve.</string>
+	<string name="touch_sensitivity_title">Érintésérzékenység növelése</string>
+	
+	<string name="torch_title">Gyors zseblámpa</string>
+    <string name="torch_summary">Kikapcsolt kijelzőnél a bekapcsológomb hosszú nyomásával kapcsolható a zseblámpa</string>
+    <string name="torch_long_press_power_timeout_never">Soha</string>
+    <string name="torch_long_press_power_timeout_1min">1 perc</string>
+    <string name="torch_long_press_power_timeout_2min">2 perc</string>
+    <string name="torch_long_press_power_timeout_5min">5 perc</string>
+    <string name="torch_long_press_power_timeout_10min">10 perc</string>
+    <string name="torch_long_press_power_timeout_title">Automatikus kikapcsolás</string>
+	
+	<string name="status_bar_settings">Értesítési sáv</string>
+    <string name="quick_pulldown_title">Gyors lehúzás</string>
+    <string name="status_bar_quick_qs_pulldown_off">Ki</string>
+    <string name="status_bar_quick_qs_pulldown_right">Jobb</string>
+    <string name="status_bar_quick_qs_pulldown_left">Bal</string>
+	<string name="status_bar_quick_qs_pulldown_both">Mindkettő</string>
+    <string name="status_bar_quick_qs_pulldown_summary">Gyors beállítások megjelenítése az értesítési sáv %1$s oldalán történő lehúzáskor</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">bal</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">jobb</string>
+	<string name="status_bar_quick_qs_pulldown_summary_both">bármely</string>
+	
+	<string name="network_traffic_settings_title">Hálózati forgalomfigyelő</string>
+    <string name="network_traffic_settings_summary">Az aktuális hálózati forgalom szintjének megjelenítése az értesítési sávon</string>
+    <string name="network_traffic_mode_title">Megjelenítési mód</string>
+    <string name="network_traffic_mode_disable">Kikapcsolva</string>
+    <string name="network_traffic_mode_up">Csak feltöltés</string>
+    <string name="network_traffic_mode_down">Csak a letöltés</string>
+    <string name="network_traffic_mode_all">Feltöltés és letöltés</string>
+    <string name="network_traffic_position_title">Elhelyezés</string>
+    <string name="network_traffic_autohide">Automatikus elrejtés</string>
+    <string name="network_traffic_autohide_summary">A forgalomfigyelő elrejtése, ha nincs aktivitás</string>
+    <string name="network_traffic_units_title">Forgalom mérési egységek</string>
+    <string name="network_traffic_units_kilobits">Kilobit (kb/s)</string>
+    <string name="network_traffic_units_megabits">Megabit (Mb/s)</string>
+    <string name="network_traffic_units_kilobytes">Kilobájt (kB/s)</string>
+    <string name="network_traffic_units_megabytes">Megabájt (MB/s)</string>
+    <string name="network_traffic_units_auto">Automatikus (kB/s vagy MB/s)</string>
+    <string name="network_traffic_show_units">Mértékegységek mutatása</string>
+    <string name="network_traffic_show_units_off">Ki</string>
+    <string name="network_traffic_show_units_on">Be</string>
+    <string name="network_traffic_show_units_compact">Kompakt</string>
+    <string name="network_traffic_show_units_summary">A forgalom mérési egységek megjelenítése az értesítési sávon</string>
+    <string name="network_traffic_disabled_clock">A hálózati forgalom monitorozása az óra helyzete miatt letiltva</string>
+    <string name="status_bar_clock_position_right">Jobb</string>
+    <string name="status_bar_clock_position_left">Bal</string>
+	
+	<string name="scrim_customization_title">Értesítési panel</string>
+    <string name="scrim_customization_summary">Elmosódás, átlátszóság és színek testreszabása</string>
+    <string name="scrim_blur_category">Elmosódás</string>
+    <string name="background_blur_title">Gyorsbeállítások háttér elmosódása</string>
+    <string name="scrim_transparency_category">Átlátszóság</string>
+    <string name="background_transparency_title">Gyorsbeállítások háttér átlátszósága</string>
+    <string name="notification_transparency_title">Értesítési panel átlátszósága</string>
+    <string name="scrim_color_category">Szín</string>
+    <string name="background_accent_title">Háttér kiemelőszín</string>
+    <string name="background_accent_summary">Kiemelőszín használata a gyorsbeállítások hátterén</string>
+    <string name="notification_accent_title">Panel kiemelőszín</string>
+    <string name="notification_accent_summary">Kiemelőszín használata az értesítési panelen</string>
+    <string name="reset_scrim_settings">Visszaállítás</string>
+    <string name="reset_scrim_settings_summary">Az összes beállítás visszaállítása az alapértelmezett értékekre</string>	
+	<string name="pill_category_title">Navigációs kapszula</string>
+    <string name="show_navbar_pill_title">Kapszula megjelenítése</string>
+    <string name="show_navbar_pill_summary">Navigációs kapszula megjelenítése a képernyő alján</string>
+	<string name="pill_length_title">Kapszula hossza</string>
+	<string name="short_label">Rövid</string>
+	<string name="long_label">Hosszú</string>
+	<string name="pill_height_title">Kapszula vastagsága</string>
+	<string name="thin_label">Vékony</string>
+	<string name="thick_label">Vastag</string>
 </resources>

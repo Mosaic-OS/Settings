@@ -3218,6 +3218,10 @@
     <string name="display_settings">Display</string>
     <!-- Sound & display settings screen, accelerometer-based rotation check box label -->
     <string name="accelerometer_title">Auto-rotate screen</string>
+    <string name="rotation_settings_summary">Tap to manage rotation directions</string>
+    <string name="display_rotation_modes_summary">Regular portrait (0°) orientation is always allowed</string>
+    <string name="display_rotation_modes_heading">Rotation modes</string>
+
     <!-- Sound & display settings screen, locked rotation check box label [CHAR LIMIT=30] -->
     <string name="auto_rotate_option_off">Off</string>
     <!-- Sound & display settings screen, accelerometer-based rotation check box label [CHAR LIMIT=30] -->
@@ -3381,6 +3385,9 @@
     <string name="dark_ui_activation_off_auto">Turn off until sunset</string>
     <!-- Dark UI screen, setting option name to enable Dark UI [CHAR LIMIT=30] -->
     <string name="dark_ui_title">Dark Mode</string>
+	<!-- AMOLED UI -->
+    <string name="dark_mode_amoled_black_title">Black theme</string>
+    <string name="dark_mode_amoled_black_summary">Use pure black theme instead of dark</string>
     <!-- Dark UI screen, setting option name to configure whether Dark UI turn on/off automatically. [CHAR LIMIT=30] -->
     <string name="dark_ui_auto_mode_title">Schedule</string>
     <!-- Dark UI screen, setting option value for Dark UI to *never* turn on/off automatically. [CHAR LIMIT=30] -->
@@ -3414,8 +3421,8 @@
     <!-- Display settings screen, summary of Dark UI when on and controlled by Modes. [CHAR LIMIT=NONE] -->
     <string name="dark_ui_summary_on_auto_mode_modes">Will turn off when <xliff:g name="modeName" example="Bedtime">%1$s</xliff:g> ends</string>
     <!-- Dark theme screen, description of Dark theme feature. [CHAR LIMIT=NONE] -->
-    <string name="dark_ui_text">Dark theme uses a black background to help keep battery alive longer on some screens. Dark theme schedules wait to turn on until your screen is off.</string>
-    <string name="dark_ui_text_force_invert">Use a dark background to make your screen more comfortable to view and reduce battery usage on some screens. Your theme will change if you have a schedule, when the screen is off.</string>
+	<string name="dark_ui_text">Dark theme uses a darker background by default. To further increase battery life on AMOLED screens, enable black theme. Dark theme schedules wait to turn on until your screen is off.</string>
+    <string name="dark_ui_text_force_invert">Use a dark background to make your screen more comfortable to view and reduce battery usage on some screens. To further increase battery life on AMOLED screens, enable black theme. Your theme will change if you have a schedule, when the screen is off.</string>
     <!-- Dark UI screen footer summary text shown when the when Dark theme turns on/off automatically according to a user bedtime schedule. [CHAR LIMIT=NONE] -->
     <string name="dark_ui_bedtime_footer_summary">Dark theme is currently following your Bedtime mode schedule</string>
     <!-- Dark UI screen footer action text shown when the when Dark theme turns on/off automatically according to a user bedtime schedule. [CHAR LIMIT=NONE] -->
@@ -3647,6 +3654,8 @@
 
     <!-- About phone screen, status item label  [CHAR LIMIT=40] -->
     <string name="firmware_version">Android version</string>
+	<!-- About phone screen, MosaicOS version -->
+    <string name="mosaicos_version">MosaicOS version</string>
     <!-- About phone screen, status item label  [CHAR LIMIT=60] -->
     <string name="security_patch">Android security update</string>
     <!-- About phone screen, status item label  [CHAR LIMIT=40] -->
@@ -15000,4 +15009,81 @@
     <string name="safety_center_device_finder_search_terms"></string>
     <!-- Safety Center system component update search terms [CHAR LIMIT=NONE] -->
     <string name="safety_center_system_component_update_search_terms"></string>
+	<string name="app_not_installed">Info app is not installed.</string>
+	
+	<!-- Quick torch -->
+    <string name="torch_title">Quick torch</string>
+    <string name="torch_summary">Long-pressing the power button while the screen is off will toggle torch</string>
+    <string name="torch_long_press_power_timeout_never">Never</string>
+    <string name="torch_long_press_power_timeout_1min">1 minute</string>
+    <string name="torch_long_press_power_timeout_2min">2 minutes</string>
+    <string name="torch_long_press_power_timeout_5min">5 minutes</string>
+    <string name="torch_long_press_power_timeout_10min">10 minutes</string>
+    <string name="torch_long_press_power_timeout_title">Automatically turn torch off</string>
+	
+	<!-- Quick pulldown -->
+    <string name="status_bar_settings">Status bar</string>
+    <string name="quick_pulldown_title">Quick pulldown</string>
+    <string name="status_bar_quick_qs_pulldown_off">Off</string>
+    <string name="status_bar_quick_qs_pulldown_right">Right</string>
+    <string name="status_bar_quick_qs_pulldown_left">Left</string>
+	<string name="status_bar_quick_qs_pulldown_both">Both</string>
+    <string name="status_bar_quick_qs_pulldown_summary">Quick pulldown from %1$s side</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">left</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">right</string>
+	<string name="status_bar_quick_qs_pulldown_summary_both">any</string>
+	
+	<!-- Network Traffic -->
+    <string name="network_traffic_settings_title">Network traffic monitor</string>
+    <string name="network_traffic_settings_summary">Show current network traffic levels in the status bar</string>
+    <string name="network_traffic_mode_title">Display mode</string>
+    <string name="network_traffic_mode_disable">Disabled</string>
+    <string name="network_traffic_mode_up">Upload only</string>
+    <string name="network_traffic_mode_down">Download only</string>
+    <string name="network_traffic_mode_all">Upload and download</string>
+    <string name="network_traffic_position_title">Position</string>
+    <string name="network_traffic_autohide">Auto hide</string>
+    <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
+    <string name="network_traffic_units_title">Traffic measurement units</string>
+    <string name="network_traffic_units_kilobits">Kilobits per second (kb/s)</string>
+    <string name="network_traffic_units_megabits">Megabits per second (Mb/s)</string>
+    <string name="network_traffic_units_kilobytes">Kilobytes per second (kB/s)</string>
+    <string name="network_traffic_units_megabytes">Megabytes per second (MB/s)</string>
+    <string name="network_traffic_units_auto">Automatic (kB/s or MB/s)</string>
+    <string name="network_traffic_show_units">Show units</string>
+    <string name="network_traffic_show_units_off">Off</string>
+    <string name="network_traffic_show_units_on">On</string>
+    <string name="network_traffic_show_units_compact">Compact</string>
+    <string name="network_traffic_show_units_summary">Whether to show traffic measurement units in the statusbar</string>
+    <string name="network_traffic_disabled_clock">Network traffic disabled due to clock position</string>
+    <string name="status_bar_clock_position_right">Right</string>
+    <string name="status_bar_clock_position_left">Left</string>
+	
+	<!-- Notification panel blur, etc. customization -->
+	<string name="scrim_customization_title">Notification panel</string>
+	<string name="scrim_customization_summary">Customize blur, transparency, and colors</string>
+	<string name="scrim_blur_category">Blur</string>
+	<string name="background_blur_title">Quick Settings background blur</string>
+	<string name="scrim_transparency_category">Transparency</string>
+	<string name="background_transparency_title">Quick Settings background transparency</string>
+	<string name="notification_transparency_title">Notification panel transparency</string>
+	<string name="scrim_color_category">Color</string>
+	<string name="background_accent_title">Background accent</string>
+	<string name="background_accent_summary">Use accent color for Quick Settings background</string>
+	<string name="notification_accent_title">Panel accent</string>
+	<string name="notification_accent_summary">Use accent color for notification panel</string>
+	<string name="reset_scrim_settings">Reset</string>
+	<string name="reset_scrim_settings_summary">Restore all settings to default values</string>
+
+	<!-- Navigation bar pill -->
+	<string name="pill_category_title">Navigation pill</string>
+	<string name="show_navbar_pill_title">Show pill</string>
+	<string name="show_navbar_pill_summary">Show navigation pill at the bottom of the screen</string>
+	<string name="pill_length_title">Pill length</string>
+	<string name="short_label">Short</string>
+	<string name="long_label">Long</string>
+	<string name="pill_height_title">Pill thickness</string>
+	<string name="thin_label">Thin</string>
+	<string name="thick_label">Thick</string>
+	
 </resources>

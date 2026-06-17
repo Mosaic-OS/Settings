@@ -33,8 +33,12 @@ public class AutoRebootPrefController extends IntSettingPrefController {
         entries.add(36, HOURS);
         entries.add(1, DAYS);
         entries.add(18, HOURS);
+        entries.add(16, HOURS);
+        entries.add(14, HOURS);
         entries.add(12, HOURS);
+        entries.add(10, HOURS);
         entries.add(8, HOURS);
+        entries.add(6, HOURS);
         entries.add(4, HOURS);
         entries.add(2, HOURS);
         entries.add(1, HOURS);

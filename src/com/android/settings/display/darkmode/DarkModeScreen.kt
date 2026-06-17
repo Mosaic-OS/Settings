@@ -104,6 +104,7 @@ abstract class BaseDarkModeScreen(context: Context) :
         preferenceHierarchy(context) {
             +DarkModeTopIntroPreference()
             +DarkModeMainSwitchPreference(darkModeStorage)
+			+BlackThemePreference(context, darkModeStorage)
             +TwilightLocationPreference()
             if (android.view.accessibility.Flags.forceInvertColor()) {
                 +PreferenceCategory("dark_theme_group", R.string.dark_theme_version_category) += {

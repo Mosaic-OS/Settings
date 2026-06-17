@@ -66,6 +66,8 @@ import android.view.MenuItem;
 import android.view.WindowManagerGlobal;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+import android.widget.PopupMenu;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
@@ -263,6 +265,8 @@ public class UserSettings extends SettingsPreferenceFragment
     private String mPendingUserIconPath;
     private Drawable mPendingUserIcon;
     private boolean mPendingUserIsAdmin;
+    
+    private static final int MENU_CREATE_SECRET = Menu.FIRST + 100;
 
     // A place to cache the generated default avatar
     private Drawable mDefaultIconDrawable;
@@ -403,6 +407,7 @@ public class UserSettings extends SettingsPreferenceFragment
 
         mUserListCategory = (PreferenceGroup) findPreference(KEY_USER_LIST);
         mMePreference = new UserPreference(getPrefContext(), null /* attrs */, myUserId);
+        mMePreference.setOnPreferenceLongPressListener(null);
         mMePreference.setKey(KEY_USER_ME);
         mMePreference.setOnPreferenceClickListener(this);
         if (showUserDetailsSettingsForSelf()) {
@@ -469,6 +474,7 @@ public class UserSettings extends SettingsPreferenceFragment
         if (mShouldUpdateUserList) {
             updateUI();
         }
+        updateSecretProfileMenuVisibility();
     }
 
     @Override
@@ -1302,6 +1308,33 @@ public class UserSettings extends SettingsPreferenceFragment
         }
     }
 
+    private void updateSecretProfileMenuVisibility() {
+        if (mMePreference == null) return;
+        if (UserHandle.myUserId() != UserHandle.USER_SYSTEM) {
+            mMePreference.setOnPreferenceLongPressListener(null);
+            return;
+        }
+        mMePreference.setOnPreferenceLongPressListener(anchor -> {
+            Context ctx = anchor.getContext();
+            PopupMenu popup = new PopupMenu(ctx, anchor);
+            popup.getMenu().add(0, MENU_CREATE_SECRET, 0,
+                    ctx.getString(R.string.secret_profile_title));
+            popup.setOnMenuItemClickListener(item -> {
+                if (item.getItemId() == MENU_CREATE_SECRET) {
+                    Intent intent = new Intent("com.android.settings.SECRET_PROFILE_SETTINGS");
+                    intent.setPackage(ctx.getPackageName());
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    try {
+                        ctx.startActivity(intent);
+                    } catch (Exception e) {}
+                    return true;
+                }
+                return false;
+            });
+            popup.show();
+        });
+    }
+    
     @VisibleForTesting
     void updateUserList() {
         final Context context = getActivity();
@@ -1337,10 +1370,16 @@ public class UserSettings extends SettingsPreferenceFragment
                                 .getBoolean(
                                         com.android.internal.R.bool
                                                 .config_userSwitchingMustGoThroughLoginScreen);
+        // Resolve the secret-profile user id once per refresh instead of once per user:
+        // each call allocates a LockPatternUtils and makes a main-thread binder call.
+        final int secretProfileUserId = getSecretProfileUserId();
         for (UserInfo user : users) {
             if (user.isGuest()) {
                 // Guest user is added to guest category via updateGuestCategory
                 // and not to user list so skip guest here
+                continue;
+            }
+            if (user.id == secretProfileUserId) {
                 continue;
             }
             if (shouldShowOnlySelf && user.id != UserHandle.myUserId()) {
@@ -1936,6 +1975,14 @@ public class UserSettings extends SettingsPreferenceFragment
             avatarDataStream.close();
         } catch (IOException ioe) {
         }
+    }
+    
+    private int getSecretProfileUserId() {
+      try {
+          return new LockPatternUtils(getContext()).getSecretProfileUserId();
+      } catch (Exception e) {
+          return UserHandle.USER_NULL;
+      }
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
