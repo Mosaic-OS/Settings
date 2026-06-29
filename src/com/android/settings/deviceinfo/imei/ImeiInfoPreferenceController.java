@@ -161,7 +161,9 @@ public class ImeiInfoPreferenceController extends BasePreferenceController {
             return;
         }
         preference.setTitle(getTitle(simSlot));
-        preference.setSummary(getSummary(simSlot));
+        // Hide the IMEI/MEID by default so it isn't exposed in screenshots of the
+        // About phone page; handlePreferenceTreeClick() reveals it when tapped.
+        preference.setSummary(mContext.getString(R.string.device_info_protected_single_press));
     }
 
     private CharSequence getTitleForGsmPhone(int simSlot, boolean isPrimaryImei) {
