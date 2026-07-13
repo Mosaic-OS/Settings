@@ -6447,6 +6447,23 @@
             <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
                 android:value="@string/menu_key_apps"/>
         </activity>
+		
+		<activity android:name=".security.SecretProfileMainActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/GlifTheme.Light"
+            android:permission="android.permission.MANAGE_SAFETY_CENTER"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="com.android.settings.SECRET_PROFILE_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".security.SecretProfileSetupActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/GlifTheme.Light"
+            android:exported="false" />
 
     </application>
 </manifest>
