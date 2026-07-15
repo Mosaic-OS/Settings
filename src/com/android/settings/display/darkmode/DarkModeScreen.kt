@@ -41,7 +41,6 @@ import com.android.settingslib.datastore.KeyValueStore
 import com.android.settingslib.datastore.KeyedObserver
 import com.android.settingslib.metadata.BooleanValuePreference
 import com.android.settingslib.metadata.MUSTPASS_SET
-import com.android.settingslib.metadata.MUSTPASS_SET
 import com.android.settingslib.metadata.PreferenceCategory
 import com.android.settingslib.metadata.PreferenceIndexableProvider
 import com.android.settingslib.metadata.PreferenceLifecycleContext
@@ -112,6 +111,7 @@ abstract class BaseDarkModeScreen(context: Context, val isUiOnly: Boolean) :
         preferenceHierarchy(context) {
             +DarkModeTopIntroPreference()
             +DarkModeMainSwitchPreference(darkModeStorage, isUiOnly)
+            +BlackThemePreference(context, darkModeStorage)
             +TwilightLocationPreference()
             if (android.view.accessibility.Flags.forceInvertColor()) {
                 +PreferenceCategory(

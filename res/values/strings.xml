@@ -3354,6 +3354,9 @@
     <string name="dark_ui_activation_off_auto">Turn off until sunset</string>
     <!-- Dark UI screen, setting option name to enable Dark UI [CHAR LIMIT=30] -->
     <string name="dark_ui_title">Dark Mode</string>
+	<!-- AMOLED UI -->
+    <string name="dark_mode_amoled_black_title">Black theme</string>
+    <string name="dark_mode_amoled_black_summary">Use pure black theme instead of dark</string>
     <!-- Dark UI screen, setting option name to configure whether Dark UI turn on/off automatically. [CHAR LIMIT=30] -->
     <string name="dark_ui_auto_mode_title">Schedule</string>
     <!-- Dark UI screen, setting option value for Dark UI to *never* turn on/off automatically. [CHAR LIMIT=30] -->
@@ -3387,8 +3390,8 @@
     <!-- Display settings screen, summary of Dark UI when on and controlled by Modes. [CHAR LIMIT=NONE] -->
     <string name="dark_ui_summary_on_auto_mode_modes">Will turn off when <xliff:g name="modeName" example="Bedtime">%1$s</xliff:g> ends</string>
     <!-- Dark theme screen, description of Dark theme feature. [CHAR LIMIT=NONE] -->
-    <string name="dark_ui_text">Dark theme uses a black background to help keep battery alive longer on some screens. Dark theme schedules wait to turn on until your screen is off.</string>
-    <string name="dark_ui_text_force_invert">Use a dark background to make your screen more comfortable to view and reduce battery usage on some screens. Your theme will change if you have a schedule, when the screen is off.</string>
+	<string name="dark_ui_text">Dark theme uses a darker background by default. To further increase battery life on AMOLED screens, enable black theme. Dark theme schedules wait to turn on until your screen is off.</string>
+    <string name="dark_ui_text_force_invert">Use a dark background to make your screen more comfortable to view and reduce battery usage on some screens. To further increase battery life on AMOLED screens, enable black theme. Your theme will change if you have a schedule, when the screen is off.</string>
     <!-- Dark UI screen footer summary text shown when the when Dark theme turns on/off automatically according to a user bedtime schedule. [CHAR LIMIT=NONE] -->
     <string name="dark_ui_bedtime_footer_summary">Dark theme is currently following your Bedtime mode schedule</string>
     <!-- Dark UI screen footer action text shown when the when Dark theme turns on/off automatically according to a user bedtime schedule. [CHAR LIMIT=NONE] -->

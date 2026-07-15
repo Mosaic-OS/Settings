@@ -1,0 +1,69 @@
+/*
+ * Copyright (C) The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.android.settings.display.darkmode
+
+import android.content.Context
+import androidx.preference.SwitchPreferenceCompat
+import com.android.settings.R
+import com.android.settingslib.metadata.BooleanValuePreference
+import com.android.settingslib.metadata.PreferenceAvailabilityProvider
+import com.android.settingslib.metadata.PreferenceMetadata
+import com.android.settingslib.metadata.preferencesapi.preconditions.PreconditionStability
+import com.android.settingslib.preference.PreferenceBinding
+import android.provider.Settings
+
+class BlackThemePreference(context: Context, private val darkModeStorage: DarkModeStorage) :
+    PreferenceMetadata, BooleanValuePreference, PreferenceBinding, PreferenceAvailabilityProvider {
+
+    private val blackThemeStorage = BlackThemeStorage(context)
+
+    override val key: String = Settings.Secure.THEME_AMOLED_BLACK
+
+    override val title: Int = R.string.dark_mode_amoled_black_title
+
+    override val summary: Int = R.string.dark_mode_amoled_black_summary
+
+    override val supportsWrite = true
+
+    override val purpose: Int = R.string.dark_mode_amoled_black_summary
+
+    override fun storage(context: Context) = blackThemeStorage
+
+    override fun isEnabled(context: Context): Boolean {
+        return darkModeStorage.getBoolean(DarkModeMainSwitchPreference.KEY) ?: false
+    }
+
+    override fun createWidget(context: Context) =
+        SwitchPreferenceCompat(context).apply { isPersistent = false }
+
+    override val availabilityDescription =
+        "The com.mosaicos.blacktheme overlay package must be installed."
+
+    override fun getAvailabilityStability() = PreconditionStability.STABLE_UNTIL_APK_UPDATE
+
+    override fun isAvailable(context: Context): Boolean {
+        return try {
+            context.packageManager.getPackageInfo(
+                "com.mosaicos.blacktheme",
+                0,
+            )
+            true
+        } catch (e: Exception) {
+            false
+        }
+    }
+}
