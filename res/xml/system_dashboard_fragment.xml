@@ -99,6 +99,13 @@
             android:fragment="com.android.settings.inputmethod.MouseSettingFragment"
             settings:controller="com.android.settings.inputmethod.MouseSettingsController" />
 
+        <!-- MosaicOS: Status bar settings -->
+        <Preference
+            android:key="status_bar_settings"
+            android:title="@string/status_bar_settings"
+            android:icon="@drawable/ic_settings_statusbar"
+            android:fragment="com.android.settings.statusbar.StatusBarSettingsFragment"/>
+
         <Preference
             android:key="game_controller_settings"
             android:title="@string/game_controller_settings_title"

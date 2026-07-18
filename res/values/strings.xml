@@ -15644,4 +15644,38 @@
     <!-- Search keywords for Human interface device access setting -->
     <string name="keywords_access_hid">hid, human, access, device</string>
     <!-- Access HID end -->
+
+    <!-- Network traffic monitor -->
+    <!-- Title of the network traffic monitor entry in the Status bar settings list -->
+    <string name="network_traffic_settings_title">Network traffic monitor</string>
+    <!-- Summary of the network traffic monitor entry in the Status bar settings list -->
+    <string name="network_traffic_settings_summary">Show current network traffic levels in the status bar</string>
+    <string name="network_traffic_state_title">Network traffic display</string>
+    <string name="network_traffic_location_title">Network traffic location</string>
+    <string name="network_traffic_type">Net activity type</string>
+    <string name="network_traffic_autohide_threshold_title">Autohide threshold</string>
+    <!-- Summary of the autohide threshold slider. %1$d is the threshold in KB/s. -->
+    <string name="network_traffic_autohide_threshold_summary">Hide the indicator when traffic is slower than %1$d KB/s</string>
+    <!-- Summary of the autohide threshold slider for MB/s steps. %1$d is the threshold in MB/s. -->
+    <string name="network_traffic_autohide_threshold_summary_mb">Hide the indicator when traffic is slower than %1$d MB/s</string>
+    <!-- Summary of the autohide threshold slider when set to 0 (never hide). -->
+    <string name="network_traffic_autohide_threshold_summary_always">Always show, even when there is no traffic</string>
+    <string name="network_traffic_arrow_title">Show arrows</string>
+    <string name="network_traffic_arrow_summary">Show the network traffic indicator arrows</string>
+    <string name="network_traffic_text_enabled_title">Show text</string>
+    <string name="network_traffic_text_enabled_summary_on">Show traffic speed near the arrows</string>
+    <string name="network_traffic_text_enabled_summary_off">Only show the arrows indicating activity</string>
+    <string name="network_traffic_font_size_title">Font size</string>
+    <!-- Summary of the font size slider. %1$d is the text size in dp. -->
+    <string name="network_traffic_font_size_summary">Text size of the indicator: %1$d dp</string>
+    <string name="network_traffic_reset_title">Reset to defaults</string>
+    <string name="network_traffic_reset_summary">Restore all network traffic monitor settings</string>
+    <string name="show_network_traffic_all">Both</string>
+    <string name="show_network_traffic_up">Upload</string>
+    <string name="show_network_traffic_down">Download</string>
+    <string name="show_network_traffic_combined">Combined (Upload + Download)</string>
+    <string name="show_network_traffic_dynamic">Dynamic</string>
+    <string name="traffic_statusbar">Status bar</string>
+    <string name="traffic_expanded_statusbar">Quick settings</string>
+    <string name="status_bar_settings">Status bar</string>
 </resources>
