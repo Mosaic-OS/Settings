@@ -130,6 +130,7 @@ import com.android.settings.gestures.PickupGestureSettings;
 import com.android.settings.gestures.PowerMenuSettings;
 import com.android.settings.gestures.SwipeToNotificationSettings;
 import com.android.settings.gestures.SystemNavigationGestureSettings;
+import com.android.settings.gestures.TorchSettingsFragment;
 import com.android.settings.input.gamecontroller.GameControllerFragment;
 import com.android.settings.input.gamecontroller.GameControllerListFragment;
 import com.android.settings.inputmethod.AvailableVirtualKeyboardFragment;
@@ -318,6 +319,7 @@ public class SettingsGateway {
             PickupGestureSettings.class.getName(),
             DoubleTwistGestureSettings.class.getName(),
             SystemNavigationGestureSettings.class.getName(),
+            TorchSettingsFragment.class.getName(),
             StatusBarSettingsFragment.class.getName(),
             NetworkTrafficSettingsFragment.class.getName(),
             ShadePanelsFragment.class.getName(),

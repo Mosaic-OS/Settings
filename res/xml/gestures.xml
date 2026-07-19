@@ -87,4 +87,11 @@
         android:title="@string/gesture_prevent_ringing_screen_title"
         android:fragment="com.android.settings.gestures.PreventRingingGestureSettings"
         settings:controller="com.android.settings.gestures.PreventRingingParentPreferenceController" />
+
+	<com.android.settingslib.PrimarySwitchPreference
+        android:key="gesture_torch"
+        android:title="@string/torch_title"
+        android:summary="@string/torch_summary"
+        android:fragment="com.android.settings.gestures.TorchSettingsFragment"
+        settings:controller="com.android.settings.gestures.TorchPreferenceController"/>
 </PreferenceScreen>

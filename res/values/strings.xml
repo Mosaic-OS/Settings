@@ -15645,6 +15645,19 @@
     <string name="keywords_access_hid">hid, human, access, device</string>
     <!-- Access HID end -->
 
+	<!-- Quick torch -->
+    <string name="torch_title">Quick torch</string>
+    <string name="torch_summary">Long-pressing the power button while the screen is off will toggle torch</string>
+    <string name="torch_long_press_power_timeout_never">Never</string>
+    <string name="torch_long_press_power_timeout_1min">1 minute</string>
+    <string name="torch_long_press_power_timeout_2min">2 minutes</string>
+    <string name="torch_long_press_power_timeout_5min">5 minutes</string>
+    <string name="torch_long_press_power_timeout_10min">10 minutes</string>
+    <string name="torch_long_press_power_timeout_title">Automatically turn torch off</string>
+    <!-- Summary for a torch auto-off timeout that isn't one of the preset options. %1$d is seconds. -->
+    <string name="torch_long_press_power_timeout_custom">Off after %1$d seconds</string>
+    <string name="torch_long_press_power_vibrate_title">Vibration</string>
+
     <!-- Network traffic monitor -->
     <!-- Title of the network traffic monitor entry in the Status bar settings list -->
     <string name="network_traffic_settings_title">Network traffic monitor</string>
