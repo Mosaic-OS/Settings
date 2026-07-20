@@ -15691,4 +15691,16 @@
     <string name="traffic_statusbar">Status bar</string>
     <string name="traffic_expanded_statusbar">Quick settings</string>
     <string name="status_bar_settings">Status bar</string>
+
+	<!-- Quick pulldown -->
+
+    <string name="quick_pulldown_title">Quick pulldown</string>
+    <string name="status_bar_quick_qs_pulldown_off">Off</string>
+    <string name="status_bar_quick_qs_pulldown_right">Right</string>
+    <string name="status_bar_quick_qs_pulldown_left">Left</string>
+	<string name="status_bar_quick_qs_pulldown_both">Both</string>
+    <string name="status_bar_quick_qs_pulldown_summary">Quick pulldown from %1$s side</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">left</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">right</string>
+	<string name="status_bar_quick_qs_pulldown_summary_both">any</string>
 </resources>

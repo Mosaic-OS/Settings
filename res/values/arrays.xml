@@ -1818,6 +1818,28 @@
         <item>600</item>
     </string-array>
 
+
+	<!-- Quick pulldown -->
+    <string-array name="status_bar_quick_qs_pulldown_entries" translatable="false">
+        <item>@string/status_bar_quick_qs_pulldown_off</item>
+        <item>@string/status_bar_quick_qs_pulldown_right</item>
+        <item>@string/status_bar_quick_qs_pulldown_left</item>
+		<item>@string/status_bar_quick_qs_pulldown_both</item>
+    </string-array>
+
+    <string-array name="status_bar_quick_qs_pulldown_entries_rtl" translatable="false">
+        <item>@string/status_bar_quick_qs_pulldown_off</item>
+        <item>@string/status_bar_quick_qs_pulldown_left</item>
+        <item>@string/status_bar_quick_qs_pulldown_right</item>
+		<item>@string/status_bar_quick_qs_pulldown_both</item>
+    </string-array>
+
+    <string-array name="status_bar_quick_qs_pulldown_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+		<item>3</item>
+    </string-array>
     <string-array name="network_traffic_location_entries" translatable="false">
         <item>@string/traffic_statusbar</item>
         <item>@string/traffic_expanded_statusbar</item>
