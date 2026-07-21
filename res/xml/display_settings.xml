@@ -108,6 +108,12 @@
             android:persistent="false"
             android:title="@string/accessibility_text_reading_options_title"
             settings:controller="com.android.settings.accessibility.TextReadingFragmentForDisplaySettingsController"/>
+
+        <Preference
+            android:key="scrim_customization"
+            android:title="@string/scrim_customization_title"
+            android:summary="@string/scrim_customization_summary"
+            android:fragment="com.android.settings.display.ScrimCustomizationSettings" />
     </PreferenceCategory>
 
     <PreferenceCategory

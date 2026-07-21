@@ -15707,4 +15707,21 @@
     <string name="status_bar_quick_qs_pulldown_summary_left">left</string>
     <string name="status_bar_quick_qs_pulldown_summary_right">right</string>
 	<string name="status_bar_quick_qs_pulldown_summary_both">any</string>
+
+	<!-- Notification panel blur, etc. customization -->
+	<string name="scrim_customization_title">Notification panel</string>
+	<string name="scrim_customization_summary">Customize blur, transparency, and colors</string>
+	<string name="scrim_blur_category">Blur</string>
+	<string name="background_blur_title">Quick Settings background blur</string>
+	<string name="scrim_transparency_category">Transparency</string>
+	<string name="background_transparency_title">QS background transparency</string>
+	<string name="notification_transparency_title">Notification panel transparency</string>
+	<string name="scrim_color_category">Color</string>
+	<string name="background_accent_title">Background accent</string>
+	<string name="background_accent_summary">Use accent color for Quick Settings background</string>
+	<string name="notification_accent_title">Panel accent</string>
+	<string name="notification_accent_summary">Use accent color for notification panel</string>
+	<string name="scrim_value_default">Default</string>
+	<string name="reset_scrim_settings">Reset</string>
+	<string name="reset_scrim_settings_summary">Restore all settings to default values</string>
 </resources>
