@@ -15724,4 +15724,15 @@
 	<string name="scrim_value_default">Default</string>
 	<string name="reset_scrim_settings">Reset</string>
 	<string name="reset_scrim_settings_summary">Restore all settings to default values</string>
+
+    <!-- Navigation bar pill -->
+    <string name="pill_category_title">Navigation pill</string>
+    <string name="show_navbar_pill_title">Show pill</string>
+    <string name="show_navbar_pill_summary">Show navigation pill at the bottom of the screen</string>
+    <string name="pill_length_title">Pill length</string>
+    <string name="short_label">Short</string>
+    <string name="long_label">Long</string>
+    <string name="pill_height_title">Pill thickness</string>
+    <string name="thin_label">Thin</string>
+    <string name="thick_label">Thick</string>
 </resources>
