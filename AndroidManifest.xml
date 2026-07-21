@@ -1720,7 +1720,7 @@
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.display.SmartAutoRotatePreferenceFragment" />
+                android:value="com.android.settings.display.RotationSettingsFragment" />
             <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
                        android:value="@string/menu_key_display"/>
         </activity>

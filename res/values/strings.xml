@@ -3181,6 +3181,10 @@
     <skip />
     <!-- Sound & display settings screen, accelerometer-based rotation check box label -->
     <string name="accelerometer_title">Auto-rotate screen</string>
+
+    <string name="rotation_settings_summary">Tap to manage rotation directions</string>
+    <string name="display_rotation_modes_summary">Regular portrait (0°) orientation is always allowed</string>
+    <string name="display_rotation_modes_heading">Rotation modes</string>
     <!-- Sound & display settings screen, locked rotation check box label [CHAR LIMIT=30] -->
     <string name="auto_rotate_option_off">Off</string>
     <!-- Sound & display settings screen, accelerometer-based rotation check box label [CHAR LIMIT=30] -->

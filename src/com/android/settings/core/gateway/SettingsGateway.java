@@ -111,6 +111,7 @@ import com.android.settings.display.ColorContrastFragment;
 import com.android.settings.display.ComfortViewSettings;
 import com.android.settings.display.NightDisplaySettings;
 import com.android.settings.display.ScreenTimeoutSettings;
+import com.android.settings.display.RotationSettingsFragment;
 import com.android.settings.display.SmartAutoRotatePreferenceFragment;
 import com.android.settings.display.darkmode.DarkModeSettingsFragment;
 import com.android.settings.dream.DreamSettings;
@@ -249,6 +250,7 @@ public class SettingsGateway {
             SavedAccessPointsWifiSettings2.class.getName(),
             TetherSettings.class.getName(),
             SmartAutoRotatePreferenceFragment.class.getName(),
+			RotationSettingsFragment.class.getName(),
             WifiP2pSettings.class.getName(),
             WifiTetherSettings.class.getName(),
             BackgroundCheckSummary.class.getName(),
