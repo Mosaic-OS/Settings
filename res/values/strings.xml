@@ -3698,6 +3698,8 @@
 
     <!-- About phone screen, status item label  [CHAR LIMIT=40] -->
     <string name="firmware_version">Android version</string>
+    <!-- About phone screen, MosaicOS version -->
+    <string name="mosaicos_version">MosaicOS version</string>
     <!-- About phone screen, status item label  [CHAR LIMIT=60] -->
     <string name="security_patch">Android security update</string>
     <!-- About phone screen, status item label  [CHAR LIMIT=40] -->
@@ -15661,6 +15663,7 @@
     <!-- Search keywords for Human interface device access setting -->
     <string name="keywords_access_hid">hid, human, access, device</string>
     <!-- Access HID end -->
+    <string name="app_not_installed">Info app is not installed.</string>
 
 	<!-- Quick torch -->
     <string name="torch_title">Quick torch</string>
