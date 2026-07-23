@@ -15,6 +15,7 @@ package com.android.settings.display;
 
 import android.content.Context;
 import android.hardware.display.ColorDisplayManager;
+import android.provider.Settings;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.PreferenceScreen;
@@ -55,8 +56,20 @@ public class DisplayWhiteBalancePreferenceController extends TogglePreferenceCon
 
     @Override
     public boolean setChecked(boolean isChecked) {
+        if (isChecked) {
+            // Reset the manual white balance so ambient adaptation starts from the stock
+            // white point.
+            Settings.Secure.putInt(mContext.getContentResolver(),
+                    Settings.Secure.DISPLAY_WHITE_BALANCE_TEMPERATURE,
+                    WB_MIRED_DEFAULT);
+            for (int channel = 0; channel < 3; channel++) {
+                getColorDisplayManager().setColorBalanceChannel(channel, 255);
+            }
+        }
         return getColorDisplayManager().setDisplayWhiteBalanceEnabled(isChecked);
     }
+
+    private static final int WB_MIRED_DEFAULT = 154;
 
     @Override
     public int getSliceHighlightMenuRes() {

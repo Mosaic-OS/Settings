@@ -34,6 +34,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings.Secure;
 import android.util.Log;
+import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -41,6 +42,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -52,6 +54,10 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.search.SearchIndexableRaw;
 import com.android.settingslib.widget.CandidateInfo;
 import com.android.settingslib.widget.LayoutPreference;
+import com.android.settingslib.widget.SliderPreference;
+
+import com.google.android.material.slider.LabelFormatter;
+import com.google.android.material.slider.Slider;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -82,6 +88,26 @@ public class ColorModePreferenceFragment extends RadioButtonPickerFragment {
     private View mViewArrowNext;
     private ViewPager mViewPager;
 
+    private static final int WB_MIRED_DEFAULT = 154;
+    private static final int WB_POS_MAX = 200;
+    private static final int WB_POS_STEP = 5;
+    private static final int WB_SNAP_POS = 5;
+    // Piecewise anchors mapping slider positions to color temperatures, keeping stock at the
+    // center and the preset detents evenly spaced per side.
+    private static final int[] WB_ANCHOR_POS = {0, 35, 70, 100, 120, 140, 160, 180, 200};
+    private static final int[] WB_ANCHOR_KELVIN =
+            {15000, 8000, 7000, 6500, 6000, 5500, 4000, 3200, 2200};
+    private static final int[] WB_STOP_POS = {35, 70, 100, 120, 140, 160, 180};
+    private static final int[] WB_STOP_NAMES = {
+            R.string.white_balance_stop_shade,
+            R.string.white_balance_stop_cloudy,
+            R.string.white_balance_stop_stock,
+            R.string.white_balance_stop_flash,
+            R.string.white_balance_stop_daylight,
+            R.string.white_balance_stop_fluorescent,
+            R.string.white_balance_stop_tungsten,
+    };
+
     private ArrayList<View> mPageList;
 
     private ImageView[] mDotIndicators;
@@ -93,6 +119,7 @@ public class ColorModePreferenceFragment extends RadioButtonPickerFragment {
 
         mColorDisplayManager = context.getSystemService(ColorDisplayManager.class);
         mResources = context.getResources();
+        setCategory(R.string.color_mode_modes_category);
 
         final ContentResolver cr = context.getContentResolver();
         mContentObserver = new ContentObserver(new Handler(Looper.getMainLooper())) {
@@ -142,6 +169,153 @@ public class ColorModePreferenceFragment extends RadioButtonPickerFragment {
     @Override
     protected int getPreferenceScreenResId() {
         return R.xml.color_mode_settings;
+    }
+
+    @Override
+    protected void addPrefsAfterList(PreferenceScreen screen) {
+        super.addPrefsAfterList(screen);
+        final Context context = getPrefContext();
+
+        final PreferenceCategory wbCategory = new PreferenceCategory(context);
+        wbCategory.setKey("white_balance_category");
+        wbCategory.setTitle(R.string.white_balance_category);
+        screen.addPreference(wbCategory);
+
+        final SliderPreference slider = new SliderPreference(context);
+        slider.setKey("white_balance_slider");
+        slider.setMin(0);
+        slider.setMax(WB_POS_MAX);
+        slider.setTextStart(R.string.white_balance_cool);
+        slider.setTextEnd(R.string.white_balance_warm);
+        slider.setUpdatesContinuously(true);
+        slider.setPersistent(false);
+        slider.setShowSliderValue(true);
+        slider.setSliderIncrement(WB_POS_STEP);
+        slider.setTickVisible(false);
+        slider.setValue(positionForMired(Secure.getInt(context.getContentResolver(),
+                Secure.DISPLAY_WHITE_BALANCE_TEMPERATURE, WB_MIRED_DEFAULT)));
+        slider.setExtraChangeListener((materialSlider, sliderValue, fromUser) -> {
+            if (fromUser && isStopPosition(Math.round(sliderValue))) {
+                materialSlider.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK);
+            }
+        });
+        slider.setExtraTouchListener(new Slider.OnSliderTouchListener() {
+            @Override
+            public void onStartTrackingTouch(@NonNull Slider materialSlider) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(@NonNull Slider materialSlider) {
+                // Settle onto the nearest detent once the finger lifts.
+                final int position = Math.round(materialSlider.getValue());
+                final int snapped = snapToStop(position);
+                if (snapped != position) {
+                    slider.setValue(snapped);
+                    final int mired = Math.round(1000000f / positionToKelvin(snapped));
+                    Secure.putInt(context.getContentResolver(),
+                            Secure.DISPLAY_WHITE_BALANCE_TEMPERATURE, mired);
+                    applyTemperature(mired);
+                }
+            }
+        });
+        slider.setLabelFormater(value -> {
+            final int position = Math.round(value);
+            for (int i = 0; i < WB_STOP_POS.length; i++) {
+                if (position == WB_STOP_POS[i]) {
+                    return getString(WB_STOP_NAMES[i]);
+                }
+            }
+            return (Math.round(positionToKelvin(position) / 50f) * 50) + "K";
+        });
+        slider.setOnPreferenceChangeListener((pref, value) -> {
+            final int mired = Math.round(1000000f / positionToKelvin((Integer) value));
+            Secure.putInt(context.getContentResolver(),
+                    Secure.DISPLAY_WHITE_BALANCE_TEMPERATURE, mired);
+            applyTemperature(mired);
+            return true;
+        });
+        wbCategory.addPreference(slider);
+
+        if (mColorDisplayManager.isDisplayWhiteBalanceAvailable(context)
+                && mColorDisplayManager.isDisplayWhiteBalanceEnabled()) {
+            slider.setEnabled(false);
+            slider.setSummary(getString(R.string.white_balance_unavailable_summary,
+                    getString(R.string.display_white_balance_title)));
+        }
+    }
+
+    private static boolean isStopPosition(int position) {
+        for (int stop : WB_STOP_POS) {
+            if (stop == position) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static int snapToStop(int position) {
+        for (int stop : WB_STOP_POS) {
+            if (Math.abs(position - stop) <= WB_SNAP_POS) {
+                return stop;
+            }
+        }
+        return position;
+    }
+
+    private static int positionToKelvin(int position) {
+        final int clamped = Math.max(0, Math.min(WB_POS_MAX, position));
+        for (int i = 1; i < WB_ANCHOR_POS.length; i++) {
+            if (clamped <= WB_ANCHOR_POS[i]) {
+                final int posSpan = WB_ANCHOR_POS[i] - WB_ANCHOR_POS[i - 1];
+                final int kelvinSpan = WB_ANCHOR_KELVIN[i] - WB_ANCHOR_KELVIN[i - 1];
+                return WB_ANCHOR_KELVIN[i - 1] + Math.round(
+                        (float) (clamped - WB_ANCHOR_POS[i - 1]) * kelvinSpan / posSpan);
+            }
+        }
+        return WB_ANCHOR_KELVIN[WB_ANCHOR_KELVIN.length - 1];
+    }
+
+    private static int positionForMired(int mired) {
+        final int kelvin = 1000000 / Math.max(1, mired);
+        final int clamped = Math.max(WB_ANCHOR_KELVIN[WB_ANCHOR_KELVIN.length - 1],
+                Math.min(WB_ANCHOR_KELVIN[0], kelvin));
+        for (int i = 1; i < WB_ANCHOR_KELVIN.length; i++) {
+            if (clamped >= WB_ANCHOR_KELVIN[i]) {
+                final int posSpan = WB_ANCHOR_POS[i] - WB_ANCHOR_POS[i - 1];
+                final int kelvinSpan = WB_ANCHOR_KELVIN[i] - WB_ANCHOR_KELVIN[i - 1];
+                final int position = WB_ANCHOR_POS[i - 1] + Math.round(
+                        (float) (clamped - WB_ANCHOR_KELVIN[i - 1]) * posSpan / kelvinSpan);
+                return Math.round((float) position / WB_POS_STEP) * WB_POS_STEP;
+            }
+        }
+        return WB_POS_MAX;
+    }
+
+    private void applyTemperature(int mired) {
+        final int[] rgb = kelvinToRgb(1000000 / mired);
+        final int[] reference = kelvinToRgb(1000000 / WB_MIRED_DEFAULT);
+        for (int i = 0; i < 3; i++) {
+            final int value = Math.max(25,
+                    Math.min(255, Math.round(255f * rgb[i] / reference[i])));
+            mColorDisplayManager.setColorBalanceChannel(i, value);
+        }
+    }
+
+    // Tanner Helland black-body approximation, valid for our 2500K-12000K range.
+    private static int[] kelvinToRgb(int kelvin) {
+        final float t = kelvin / 100f;
+        final float red = t <= 66f ? 255f
+                : 329.698727446f * (float) Math.pow(t - 60f, -0.1332047592f);
+        final float green = t <= 66f
+                ? 99.4708025861f * (float) Math.log(t) - 161.1195681661f
+                : 288.1221695283f * (float) Math.pow(t - 60f, -0.0755148492f);
+        final float blue = t >= 66f ? 255f
+                : 138.5177312231f * (float) Math.log(t - 10f) - 305.0447927307f;
+        return new int[] {
+                Math.max(0, Math.min(255, Math.round(red))),
+                Math.max(0, Math.min(255, Math.round(green))),
+                Math.max(0, Math.min(255, Math.round(blue))),
+        };
     }
 
     @VisibleForTesting

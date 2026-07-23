@@ -3181,10 +3181,10 @@
     <skip />
     <!-- Sound & display settings screen, accelerometer-based rotation check box label -->
     <string name="accelerometer_title">Auto-rotate screen</string>
-
     <string name="rotation_settings_summary">Tap to manage rotation directions</string>
     <string name="display_rotation_modes_summary">Regular portrait (0°) orientation is always allowed</string>
     <string name="display_rotation_modes_heading">Rotation modes</string>
+
     <!-- Sound & display settings screen, locked rotation check box label [CHAR LIMIT=30] -->
     <string name="auto_rotate_option_off">Off</string>
     <!-- Sound & display settings screen, accelerometer-based rotation check box label [CHAR LIMIT=30] -->
@@ -3259,6 +3259,19 @@
     <string name="display_white_balance_title">Display white balance</string>
     <!-- Display settings screen, display white balance settings summary [CHAR LIMIT=NONE] -->
     <string name="display_white_balance_summary"></string>
+    <!-- Display color settings -->
+    <string name="color_mode_modes_category">Color modes</string>
+    <string name="white_balance_category">White balance</string>
+    <string name="white_balance_cool">Cool</string>
+    <string name="white_balance_warm">Warm</string>
+    <string name="white_balance_unavailable_summary">Unavailable while %1$s is on</string>
+    <string name="white_balance_stop_shade">Shade</string>
+    <string name="white_balance_stop_cloudy">Cloudy</string>
+    <string name="white_balance_stop_stock">Stock</string>
+    <string name="white_balance_stop_flash">Flash</string>
+    <string name="white_balance_stop_daylight">Daylight</string>
+    <string name="white_balance_stop_fluorescent">Fluorescent</string>
+    <string name="white_balance_stop_tungsten">Tungsten</string>
     <!-- Display settings screen, setting option name to change Fold setting -->
     <string name="fold_lock_behavior_title">Continue using apps on fold</string>
     <!-- Display settings screen, game default frame rate settings title [CHAR LIMIT=65] -->
@@ -15694,10 +15707,9 @@
     <string name="show_network_traffic_dynamic">Dynamic</string>
     <string name="traffic_statusbar">Status bar</string>
     <string name="traffic_expanded_statusbar">Quick settings</string>
-    <string name="status_bar_settings">Status bar</string>
 
 	<!-- Quick pulldown -->
-
+    <string name="status_bar_settings">Status bar</string>
     <string name="quick_pulldown_title">Quick pulldown</string>
     <string name="status_bar_quick_qs_pulldown_off">Off</string>
     <string name="status_bar_quick_qs_pulldown_right">Right</string>
@@ -15735,4 +15747,5 @@
     <string name="pill_height_title">Pill thickness</string>
     <string name="thin_label">Thin</string>
     <string name="thick_label">Thick</string>
+
 </resources>
