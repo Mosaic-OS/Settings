@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="hardware_sku">Hardver SKU</string>
+    <string name="auto_off_never">Soha</string>
+
+    <string name="bool_setting_enable">Bekapcsolás</string>
+    <string name="bool_setting_enabled">Bekapcsolva</string>
+    <string name="bool_setting_disabled">Kikapcsolva</string>
+
+    <string name="exploit_protection_settings">Kihasználás elleni védelem</string>
+
+    <string name="app_exploit_protection_category">Alkalmazás kihasználás elleni védelem</string>
+
+    <string name="scramble_pin_title">PIN beviteli elrendezés összekeverése</string>
+
+    <string name="sandboxed_google_play">Elkülönített Google Play</string>
+    <string name="sandboxed_google_play_work_profile">Elkülönített Google Play (munkahelyi profil)</string>
+
+    <string name="user_settings_send_censored_notifications_to_current">Értesítések küldése az aktuális felhasználónak</string>
+    <string name="user_settings_send_censored_notifications_to_current_summary">A zárolási képernyő értesítései továbbításra kerülnek az aktuális felhasználónak, ha aktív marad a háttérben. Csak a felhasználó neve, az alkalmazás neve és az értesítés időpontja jelenik meg.</string>
+
+    <string name="auto_grant_OTHER_SENSORS_permission_title">Alapértelmezés szerint engedélyezi az alkalmazásoknak a szenzorok használatát</string>
+    <string name="auto_grant_OTHER_SENSORS_permission_summary_on">A szenzoros engedély nem szabványos engedély; az alkalmazások hibásan működhetnek, ha megtagadják.</string>
+    <string name="auto_grant_OTHER_SENSORS_permission_summary_off">Engedélykérés jelenik meg, amikor egy alkalmazás a szenzorokhoz próbál hozzáférni. Egyes alkalmazásokat újra kell indítani az engedélyezés után.</string>
+
+    <string name="keyguard_camera_title">Kamerahasználat engedélyezése zárolt állapotban</string>
+
+    <string name="auto_reboot_title">Automatikus újraindítás</string>
+    <string name="auto_reboot_footer">A készülék automatikus újraindítása, ha a kiválasztott időtartamon belül nem oldották fel</string>
+
+    <string name="screenshot_timestamp_exif_title">Képernyőkép időbélyegének mentése EXIF‑be</string>
+    <string name="screenshot_timestamp_exif_summary">Lehetővé teszi az időbélyeg EXIF metaadatokhoz történő hozzáfűzését a képernyőképeknél</string>
+
+    <string name="pref_gnss_supl_title">Secure User Plane Location (SUPL)</string>
+    <string name="pref_gnss_supl_footer">A‑GNSS (támogatott műholdas helymeghatározás) a közeli cellatornyok alapján.</string>
+
+    <string name="supl_enabled_grapheneos_proxy">GrapheneOS proxy</string>
+    <string name="supl_enabled_standard_server">Standard szerver</string>
+    <string name="supl_disabled">Ki</string>
+    <string name="supl_disabled_summary">A helymeghatározás rögzítése jelentősen lassabb lesz, különösen akkor, ha a PSDS is ki van kapcsolva</string>
+
+    <string name="g_euicc_lpa_title">eSIM támogatás</string>
+    <string name="g_euicc_lpa_enable_dialog_msg">
+A beállítás engedélyezéséhez a készüléket újra kell indítani
+    </string>
+    <string name="g_euicc_lpa_disable_dialog_title">Figyelem</string>
+    <string name="g_euicc_lpa_disable_dialog_msg">
+"Az eSIM támogatás kikapcsolása a következő funkciókat teszi használhatatlanná:
+
+• Új eSIM hozzáadása
+• Meglévő eSIM‑ek ki‑ és bekapcsolása
+• eSIM‑ek eltávolítása, beleértve a zárolt képernyőről is (például ha az eSIM zárolva van egy elfelejtett PIN‑kóddal)
+• eSIM‑ek törlése gyári visszaállítás során
+
+A készülék automatikusan újraindul."
+    </string>
+    <string name="g_euicc_lpa_restart_button">Újraindítás</string>
+    <string name="g_euicc_lpa_proceed_button">Tovább</string>
+
+    <string name="sim_action_esim_support_disabled_text">Az eSIM-támogatás ki van kapcsolva. Az eSIM letiltásához engedélyezze az eSIM-támogatást.</string>
+    <string name="remote_provisioning_title">Igazoló kulcsok biztosítása</string>
+    <string name="remote_provisioning_enabled_grapheneos_proxy">GrapheneOS proxy</string>
+    <string name="remote_provisioning_enabled_google_server">Google szerver</string>
+    <string name="remote_provisioning_disabled">Kikapcsolva</string>
+
+    <string name="Google_apps_special_accelerator_access_title">Különleges hozzáférés a hardvergyorsítókhoz Google‑alkalmazások számára</string>
+    <string name="Google_apps_special_accelerator_access_summary_granted">Hozzáférés engedélyezve</string>
+    <string name="Google_apps_special_accelerator_access_summary_not_granted">Hozzáférés megtagadva</string>
+    <string name="Google_apps_special_accelerator_access_main_switch">Különleges hozzáférés engedélyezése a hardvergyorsítókhoz Google‑alkalmazások számára</string>
+    <string name="Google_apps_special_accelerator_access_footer">
+"Néhány Google‑alkalmazás speciális, a normál alkalmazásokénál fejlettebb módon szeretne hozzáférni a hardvergyorsítókhoz.
+
+Például:
+• Pixel Kamera
+• Google Fotók
+• Google Hangfelvevő
+
+Ez a beállítás a készülék minden felhasználójára érvényes."
+    </string>
+
+    <string name="pref_gnss_psds_title">Predicted Satellite Data Service (PSDS)</string>
+    <string name="gnss_psds_footer">
+"Ha a PSDS be van kapcsolva, statikus PSDS információs fájlok kerülnek időszakosan letöltésre a helymeghatározás sebességének
+és pontosságának javítása érdekében. Nincs lekérdezés vagy adatküldés a szerver felé. Ezek a fájlok tartalmazzák a műholdak
+pályaadatformációit és állapotait, a Föld környezeti adatait és az időkorrekciós információkat."
+</string>
+    <string name="psds_enabled_grapheneos_server">GrapheneOS szerver</string>
+    <string name="psds_enabled_standard_server">Standard szerver</string>
+    <string name="psds_disabled">Kikapcsolva</string>
+    <string name="psds_disabled_summary">A helymeghatározás rögzítése jelentősen lassabb lesz, különösen akkor, ha a SUPL is ki van kapcsolva</string>
+
+    <string name="contact_scopes">Kapcsolati hatókörök</string>
+    <string name="storage_scopes">Tárolási hatókörök</string>
+
+    <string name="conn_checks_grapheneos_server">GrapheneOS szerver</string>
+    <string name="conn_checks_google_server">Standard (Google) szerver</string>
+    <string name="conn_checks_disabled">Kikapcsolva</string>
+
+    <string name="conn_checks_title">Internetkapcsolat ellenőrzése</string>
+    <string name="conn_checks_footer">
+"A kapcsolatellenőrzés egy speciális, üres szerverkérés, amelyet annak megállapítására küldenek,
+hogy az aktuális hálózatnak van‑e internetkapcsolata. Léteznek HTTP, HTTPS, DNS, DNS-over-TLS és DNS-over-HTTPS kapcsolatellenőrzések."
+    </string>
+
+    <string name="wifi_auto_off_title">Wi‑Fi automatikus kikapcsolása</string>
+    <string name="wifi_auto_off_footer">Ha a Wi‑Fi kapcsolat megszakad, a kiválasztott időtúllépés után automatikusan kikapcsol.</string>
+
+    <string name="bluetooth_auto_off_title">Bluetooth automatikus kikapcsolása</string>
+    <string name="bluetooth_auto_off_footer">
+"Ha nincsenek csatlakoztatott eszközök, a Bluetooth a kiválasztott időtúllépés után kikapcsol."
+    </string>
+
+    <string name="widevine_provisioning_title">Widevine hozzárendelés</string>
+    <string name="widevine_provisioning_enabled_grapheneos_proxy">GrapheneOS proxy</string>
+    <string name="widevine_provisioning_enabled_google_server">Google szerver</string>
+    <string name="widevine_provisioning_footer">A hozzárendelt tanúsítvány DRM‑védett tartalmak eléréséhez lesz felhasználva.</string>
+
+    <!-- Title of preference to enable app installs and updates [CHAR LIMIT=40] -->
+    <string name="user_app_install">Alkalmazások telepítése és frissítése</string>
+    <!-- Options for setting app install and updates per user -->
+    <string name="user_app_install_enabled">Bekapcsolva</string>
+    <string name="user_app_install_enabled_first_party_sources">Első félbeli forrásoknál engedélyezve</string>
+    <string name="user_app_install_disabled">Kikapcsolva</string>
+    <!-- Description for options for setting app installs and updates per user -->
+    <string name="user_app_install_enabled_desc">Alkalmazások telepítésének és frissítésének engedélyezése</string>
+    <string name="user_app_install_enabled_first_party_sources_desc">Alkalmazások telepítése és frissítése csak első félbeli forrásokból</string>
+    <string name="user_app_install_disabled_desc">Alkalmazások telepítésének és frissítésének letiltása</string>
+    <!-- Title of preference to enable running in background [CHAR LIMIT=40] -->
+    <string name="user_run_in_background">Háttérben futás engedélyezése</string>
+
+    <string name="allow_automatic_per_app_epcm_title">Automatikus kihasználás elleni védelem kompatibilitási mód</string>
+
+    <string name="allow_automatic_per_app_epcm_summary">
+"A kihasználás elleni védelem automatikus letiltása azoknál az alkalmazásoknál, amelyeknél ismert, hogy nem működnek megfelelően a kihasználás elleni védelemmel."
+    </string>
+
+    <string name="app_exploit_protection_default_value_warning">"Figyelem: a beállítás engedélyezése némely alkalmazás működésének leállását okozhatja.</string>
+
+    <string name="allow_access_to_obb_directory_title">Hozzáférés engedélyezése az Android/obb mappához</string>
+    <string name="allow_access_to_obb_directory_summary">Néhány nagyméretű alkalmazások (többnyire játékok) telepítéséhez szükséges, amelyek OBB bővítményfájlokat használnak</string>
+
+    <string name="battery_share_description">Töltsön más eszközöket a telefon hátuljára helyezve</string>
+    <string name="battery_share">Akkumulátor megosztás</string>
+
+    <string name="show_system_process_crash_notifs_title">Értesítsen a rendszerfolyamatok összeomlásairól</string>
+    <string name="show_system_process_crash_notifs_summary">Az ilyen összeomlások kihasználási kísérletekre utalhatnak</string>
+
+    <string name="view_logs">Logok megtekintése</string>
+
+    <string name="usbc_port_title">USB-C port</string>
+    <string name="usbc_port_off_title">Kikapcsolva</string>
+    <string name="usbc_port_off_summary">Kikapcsolja az USB-C portot.
+		Nem befolyásolja a külön töltési módot, amely a készülék kikapcsolásával és töltőre helyezésével aktiválódik.
+    </string>
+    <string name="usbc_port_charging_only_title">Csak töltés</string>
+    <string name="usbc_port_charging_only_summary">Kikapcsol mindent az USB-C porton, amely nem töltést támogató funkció.</string>
+    <string name="usbc_port_charging_only_when_locked_title">Csak töltés zárolt állapotban</string>
+    <string name="usbc_port_charging_only_when_locked_summary">
+		Engedélyezi a kizárólag töltés üzemmódot zárolt készüléknél, és letiltja azt, amikor a készülék feloldásra kerül.
+		Ha a port már csatlakoztatva van a készülék zárolásakor, akkor a kizárólag töltés üzemmód aktiválása csak a port leválasztása után történik meg.
+	  </string>
+    <string name="usbc_port_charging_only_when_locked_afu_title">Csak töltés zárolt állapotban, kivéve az első feloldás előtt</string>
+    <string name="usbc_port_charging_only_when_locked_afu_summary">
+		Ez az üzemmód ugyanúgy működik, mint a “%1$s” mód, azzal a kiegészítéssel,
+		hogy az első feloldás előtti csatlakoztatásokra további kivételt alkalmaz.
+    </string>
+    <string name="usbc_port_on_title">Bekapcsolva</string>
+    <string name="usbc_port_on_summary">Nem jelent további korlátozásokat.</string>
+
+    <string name="usbc_port_and_pogo_pins_title">USB-C port és pogo pinek</string>
+    <string name="usbc_port_and_pogo_pins_off_title">USB-C port kikapcsolva, a pogo pinek csak töltésre használhatók</string>
+    <string name="usbc_port_and_pogo_pins_off_summary">
+		Kikapcsolja az USB-C portot, és letilt minden nem töltést támogató pogo pin funkciót.
+		Nem befolyásolja a külön töltési módot, amely a készülék kikapcsolásával és töltőre csatlakoztatásával aktiválódik.
+    </string>
+    <string name="usbc_port_and_pogo_pins_charging_only_summary">Kikapcsolja az USB‑C port és a pogo pinek minden nem töltést támogató funkcióját.</string>
+    <string name="usbc_port_and_pogo_pins_charging_only_when_locked_summary">
+	Engedélyezi a kizárólag töltés üzemmódot, amikor a készülék zárolva van, és letiltja azt,
+	amikor a készülék feloldásra kerül. Ha a port már csatlakoztatva van a készülék zárolásakor,
+	a kizárólag töltés üzemmód aktiválása késleltetve lesz, amíg a portot le nem választják.
+	Ugyanez vonatkozik a pogo pinek esetére is.
+    </string>
+
+    <string name="duress_pwd_pref_title">Kényszerhelyzeti jelszó</string>
+    <string name="duress_pwd_description">"A kényszerhelyzeti jelszó megadható a felhasználói jelszó helyett bármely jelszókérést kérő felületen, például a zároló képernyőn vagy munkahelyi/profil jelszókérőnél.
+
+A kényszerhelyzeti jelszó megadása azonnal véglegesen elérhetetlenné teszi a tárolt adatokat, törli az összes eSIM‑et, majd kikapcsolja a készüléket. A MosaicOS eközben a készüléken marad.
+
+A kényszerhelyzeti PIN ugyan úgy működik, mint a kényszerhelyzeti jelszó."</string>
+    <string name="duress_pwd_enter_pin">Kényszerhelyzeti PIN megadása</string>
+    <string name="duress_pwd_confirm_pin">Kényszerhelyzeti PIN megerősítése</string>
+    <string name="duress_pwd_enter_password">Kényszerhelyzeti jelszó megadása</string>
+    <string name="duress_pwd_confirm_password">Kényszerhelyzeti jelszó megerősítése</string>
+    <string name="duress_pwd_action_add">Kényszerhelyzeti PIN és jelszó hozzáadása</string>
+    <string name="duress_pwd_add_button">Hozzáadás</string>
+    <string name="duress_pwd_toast_added">Kényszerhelyzeti PIN és jelszó hozzáadva</string>
+    <string name="duress_pwd_toast_updated">Kényszerhelyzeti PIN és jelszó frissítése</string>
+    <string name="duress_pwd_update_button">Frissítés</string>
+    <string name="duress_pwd_cancel_button">Mégse</string>
+    <string name="duress_pwd_proceed_button">Tovább</string>
+    <string name="duress_pwd_delete_button">Törlés</string>
+    <string name="duress_pwd_action_update">Kényszerhelyzeti PIN és jelszó frissítése</string>
+    <string name="duress_pwd_action_delete">Kényszerhelyzeti PIN és jelszó törlése</string>
+    <string name="duress_pwd_action_delete_confirmation">Törli a kényszerhelyzeti PIN-t és jelszót?</string>
+    <string name="duress_pwd_save_warning_title">FIGYELEM</string>
+    <string name="duress_pwd_save_warning_text">"A kényszerhelyzeti PIN/jelszó megadása a felhasználói PIN/jelszó helyett <b>azonnal véglegesen elérhetetlenné teszi a tárolt adatokat</b> és törli az összes eSIM‑et."</string>
+    <string name="duress_pwd_save_error">A kényszerhelyzeti PIN és jelszó nem kerültek mentésre.\n\nRészletek:\n%1$s</string>
+    <string name="duress_pwd_delete_error">A kényszerhelyzeti PIN és jelszó nem kerültek törlésre.\n\nRészletek:\n%1$s</string>
+    <string name="duress_pwd_error_dialog_dismiss">Bezár</string>
+
+    <string name="alt_touchscreen_mode_title">Alternatív érintőképernyő mód</string>
+    <string name="alt_touchscreen_mode_summary">Ez az üzemmód kevésbé érzékeny a hamis érintésekre. Ne engedélyezze, hacsak nem tapasztal érintőképernyő‑problémákat.</string>
+    <string name="alt_touchscreen_mode_confirm_message">Erősítse meg, hogy az érintőképernyő működik. Megerősítés hiányában az alternatív érintőképernyő mód néhány másodperc múlva letiltásra kerül.</string>
+    <string name="alt_touchscreen_mode_confirm_button">Megerősítés</string>
+
+    <string name="app_play_integrity_api">Play Integrity API</string>
+    <string name="app_play_integrity_top_intro">
+		A Play Integrity API lehetővé teszi a szolgáltatások számára, hogy alkalmazásukon keresztül ellenőrizzék a készülék tulajdonságait.
+		A legtöbb szolgáltatás a “DEVICE” vagy “STRONG” szintet vizsgálja, amelyhez a Google Mobile Services‑el licenszelt, módosítatlan gyári OS szükséges.
+		Nem minden API‑t használó alkalmazás tiltja a MosaicOS‑t. A MosaicOS teljesíti az alap integritási szintet, és a licenszelésre, Play Protectre stb. vonatkozó ellenőrzések megfelelően működnek.
+		Azt javasoljuk, hogy hagyjon visszajelzést az olyan alkalmazások számára, amelyek a MosaicOS használatát tiltják, kérve őket, hogy függesszék fel ezt a tiltást egy sokkal biztonságosabb OS
+		használata érdekében. Az alkalmazások az Android szabványos hardverigazolási API‑ját is használhatják a hardver, az OS és az alkalmazás hitelesítésére MosaicOS alatt.
+	</string>
+    <string name="app_play_integrity_contact_app_developer">Kapcsolatfelvétel az alkalmazás fejlesztőjével</string>
+    <string name="app_play_integrity_show_usage_notifications">Használati értesítések megjelenítése</string>
+    <string name="app_play_integrity_block_usage_attempts">Használati kísérletek blokkolása</string>
+    <string name="app_play_integrity_block_usage_attempts_summary_on">
+        A Play Integrity API használati kísérletek az „API nem áll rendelkezésre” hibakóddal meghiúsulnak
+    </string>
+    <string name="app_play_integrity_api_blocked">Blokkolt</string>
+    <string name="app_play_integrity_api_not_blocked">Nem blokkolt</string>
+    <string name="app_play_integrity_see_all_apps">A Play Integrity API‑t használó alkalmazások megjelenítése</string>
+
+    <string name="network_location_title">Hálózati helymeghatározás</string>
+    <string name="network_location_footer">
+"A hálózati helymeghatározás a készülék helyzetének meghatározására használt módszer, amely különféle közeli jeleket – például Wi‑Fi hálózatokat, Bluetooth‑eszközöket és cellatornyokat – használ. A készülék beolvassa ezeket a jeleket, elküldi azonosítóikat egy szervernek, amely pozicionálási adatokat szolgáltat vissza, és a készülék ezek alapján becsüli meg helyzetét. Jelenleg csak a Wi‑Fi hálózatok használatosak.
+
+Ez a módszer különösen hasznos lehet, amikor a GNSS nem elérhető vagy megbízhatatlan – például beltérben vagy rossz műholdjelek esetén. A hálózati helymeghatározás gyorsabb módot biztosít a helyzet meghatározására, mielőtt GNSS‑zár keletkezne, vagy amikor a GNSS‑jelek gyengék."
+    </string>
+    <string name="network_location_enabled_apple_china">Apple China szerver (szükséges a kínai adatokhoz)</string>
+    <string name="network_location_disabled">Ki</string>
+
+    <string name="cross_profile_clipboard_access_title">Profilok közötti megosztott vágólap</string>
+    <string name="cross_profile_clipboard_access_allow_defaults_title">Alapértelmezések követése</string>
+    <string name="cross_profile_clipboard_access_allow_defaults_summary">Rendszer alapértelmezéseinek engedélyezése a vágólap megosztására a főfelhasználó és az alprofilok között.</string>
+    <string name="cross_profile_clipboard_access_allow_import_defaults_title">Import alapértelmezéseinek követése</string>
+    <string name="cross_profile_clipboard_access_allow_import_defaults_summary">Rendszer alapértelmezéseinek engedélyezése a vágólap importálására a főfelhasználótól és az alprofiloktól.</string>
+    <string name="cross_profile_clipboard_access_allow_export_defaults_title">Export alapértelmezéseinek követése</string>
+    <string name="cross_profile_clipboard_access_allow_export_defaults_summary">Rendszer alapértelmezéseinek engedélyezése a vágólap exportálására a főfelhasználónak és az alprofiloknak.</string>
+    <string name="cross_profile_clipboard_access_disallow_title">Tiltva</string>
+    <string name="cross_profile_clipboard_access_disallow_summary">A vágólap megosztásának tiltása a főfelhasználó és az alprofiljai között, oda és vissza.</string>
+    <string name="cross_profile_clipboard_access_footer">
+		Ez a beállítás lehetővé teszi, hogy a felhasználók engedélyezzék vagy tiltsák a vágólap megosztását ugyanahhoz
+		a főfelhasználóhoz tartozó többi profil között, beleértve önmagukat is. Tiltás esetén a jövőbeli vágólap‑tartalom‑frissítések
+		a főfelhasználó profiljai (például a privát tér profil és a főfelhasználó, vagy a privát tér profil és a munka profil) között nem lesznek elérhetők.
+		A beállítás szigorítását megelőzően megosztott vágólap‑tartalmak elérhetősége a következő frissítésig megmarad.
+    </string>
+
+    <string name="ps_disallow_delayed_locking_title">Munkamenet azonnali befejezése zároláskor</string>
+    <string name="ps_disallow_delayed_locking_description">
+		A tároló késleltetett zárolásának tiltása a jelenlegi privát profil leállításakor vagy zárolásakor.
+		Ez lehetővé teszi, hogy a zárolás ugyanúgy működjön, mint a teljes másodlagos felhasználók munkamenetének lezárása, ahol a tároló feloldásához erős hitelesítés szükséges.
+    </string>
+
+    <string name="geocoder_title">Geokódolás</string>
+    <string name="geocoder_footer">
+"Az előre és visszafelé irányuló geokódolás olyan folyamatok, amelyek a földrajzi koordináták és az ember által olvasható címek közötti átalakításra szolgálnak. Az előre irányuló geokódolás egy adott cím koordinátáit adja vissza, míg a visszafelé irányuló geokódolás egy adott koordinátakészlet közelében található címet vagy címeket ad vissza. Az alkalmazások választhatnak, hogy az itt kiválasztott geokódolót használják-e, amely hálózati alapú szolgáltatással végzi el ezeket a kereséseket."
+    </string>
+    <string name="geocoder_enabled_openstreetmap_server">OpenStreetMap szerver</string>
+    <string name="geocoder_disabled">Ki</string>
+
+    <string name="carrier_settings_override_gos_title">Szolgáltatói beállítások felülírása</string>
+    <string name="carrier_settings_override_intro_text">
+Felülírja az eszköz szolgáltatói beállításait ehhez a SIM-kártyához. Az engedélyezés előtt először válassza ki a felülírásokat.
+    </string>
+    <string name="carrier_settings_override_footer">
+Ezek a helyi felülírások bekapcsolhatnak rejtett SIM-kártya IMS-opciókat, de a funkcionalitás a szolgáltató támogatásától és a rendelkezésre állástól függ.
+Megbízhatatlan szolgáltatást okozhat. Saját felelősségére használja.
+    </string>
+    <string name="carrier_settings_override_intro_text_expand">Nyitás</string>
+    <string name="carrier_settings_override_intro_text_collapse">Összecsukás</string>
+    <string name="carrier_settings_override_error_title">Hiba</string>
+    <string name="carrier_settings_override_error_unable_to_connect_to_config__s">Nem lehet csatlakozni az előfizetési szolgáltatáshoz (%1$s)</string>
+    <string name="carrier_settings_override_no_override_selected_title">Nem sikerült aktiválni a felülírásokat</string>
+    <string name="carrier_settings_override_no_override_selected_message">Nincs aktív felülírás. Minden beállítás az alapértelmezett értékeken van.</string>
+    <string name="carrier_settings_override_main_switch_title">Felülírások engedélyezése</string>
+    <string name="carrier_settings_override_active_title">A felülírások aktívak</string>
+    <string name="carrier_settings_override_unrecognized_category_title">Ismeretlen felülírások</string>
+    <string name="carrier_settings_override_unrecognized_warning_title">Figyelem</string>
+    <string name="carrier_settings_override_unrecognized_warning_summary">Ezeket a szolgáltatói felülírásokat nem erről a képernyőről állították be.</string>
+    <string name="carrier_settings_override_active_summary">Kapcsolja ki a felülírásokat, hogy változtatni tudjon rajtuk</string>
+    <string name="carrier_settings_override_apply_button">Szolgáltatói beállítások felülírása</string>
+    <string name="carrier_settings_override_clear_button">Az összes szolgáltatói konfigurációs felülírás törlése</string>
+    <string name="carrier_settings_default_bool_true">Elérhető</string>
+    <string name="carrier_settings_default_bool_false">Nem elérhető</string>
+    <string name="carrier_settings_default_unknown">Ismeretlen</string>
+    <string name="carrier_settings_override_bool_true">Kényszerítetten elérhető</string>
+    <string name="carrier_settings_override_bool_false">Kényszerítetten nem elérhető</string>
+    <string name="carrier_settings_override_default__s">Nincs felülírás (Alapértelmezés: %1$s)</string>
+    <string name="carrier_settings_override_volte_availability">VoLTE / Vo4G elérhetőség</string>
+    <string name="carrier_settings_override_volte_availability_description">Függ a szolgáltatás kiépítésétől, elérhetőségétől, stb.</string>
+    <string name="carrier_settings_override_vonr_enable">VoNR / Vo5G elérhetőség</string>
+    <string name="carrier_settings_override_vonr_enable_description">Függ a szolgáltatás kiépítésétől, elérhetőségétől, stb.</string>
+    <string name="carrier_settings_override_5g_title">5G adottságok</string>
+    <string name="carrier_settings_override_5g_description">A szolgáltatás 5G NR elérhetőségének felülírása az 5G NR nem önálló (NSA) és önálló (SA) módjaihoz</string>
+    <string name="carrier_settings_override_5g_enabled_all_modes">NSA és SA kényszerítése</string>
+    <string name="carrier_settings_override_5g_default_all_modes">NSA és SA</string>
+    <string name="carrier_settings_override_5g_enabled_nsa">NSA kényszerítése</string>
+    <string name="carrier_settings_override_5g_default_nsa">NSA</string>
+    <string name="carrier_settings_override_5g_enabled_sa">SA kényszerítése</string>
+    <string name="carrier_settings_override_5g_default_sa">SA</string>
+    <string name="carrier_settings_override_5g_disabled">Kényszerítetten kikapcsolva</string>
+    <string name="carrier_settings_default_5g_disabled">Kikapcsolva</string>
+    <string name="carrier_settings_override_wfc_availability">Wi-Fi hívás elérhetőség</string>
+    <string name="carrier_settings_override_wfc_availability_description">Függ a szolgáltatás kiépítésétől, elérhetőségétől, stb. A VoLTE / Vo4G-t elérhető értékre kell állítani a használatához.</string>
+    <string name="carrier_settings_override_wfc_availability_on_summary">Tartalmazza a Wi-Fi hívásokat roaming közben.</string>
+    <string name="carrier_settings_override_wfc_availability_enabled_not_editable">Elérhető, de az állapot nem szerkeszthető</string>
+    <string name="carrier_settings_override_wfc_availability_enabled_roaming_not_editable">Elérhető, de a roaming nem szerkeszthető</string>
+    <string name="network_location_enabled_apple">Apple szerver</string>
+    <string name="carrier_settings_override_cross_sim">SIM-kártyák közötti hívások / tartalék hívások elérhetősége</string>
+    <string name="carrier_settings_override_cross_sim_description">Csak két SIM-kártyás beállítások esetén. Ha engedélyezve van, akkor amikor a SIM-kártya roamingolás közben vagy lefedettség nélkül van, és nem érhető el Wi-Fi, a hívások egy másik SIM-kártya adatkapcsolatán keresztül kezdeményezhetők. Ehhez a Wi-Fi-hívásokat elérhető értékre kell állítani.</string>
+    <string name="cert_transparency_dl_footer">A Certificate Transparency (CT) egy olyan internetes szabvány, amelynek célja a digitális tanúsítványok biztonságának növelése. Előírja a tanúsítvány-kibocsátók (CA-k) számára, hogy minden kiadott tanúsítványt egy nyilvános naplóban rögzítsenek, ezzel növelve a tanúsítvány-kibocsátási folyamat átláthatóságát és elszámoltathatóságát. Az összes tanúsítvány ellenőrizhető nyilvántartása révén a CT jelentősen megnehezíti a rosszándékú szereplők számára a tanúsítványok hamisítását, a kibocsátók számára pedig a téves kiadást. Ez segíti az alkalmazások védelmét a „közbeékelődéses” (man-in-the-middle) támadásokkal és egyéb biztonsági fenyegetésekkel szemben.</string>
+    <string name="secret_profile_title">Titkos profil beállítása</string>
+    <string name="secret_profile_description">"Létrehozhat egy titkos profilt, amely nem jelenik meg a rendszerben, és amelyhez csak egy Ön által megadott kóddal lehet hozzáférni.
+    
+Csak egy titkos profilt hozhat létre. Ha új titkos profilt állít be, az előző törlődik.
+    
+A megadott kód beírása után a rendszer átvált a titkos profilra, amely onnan törölhető.
+    
+A jelszót a felhasználói jelszó helyett bármely jelszót igénylő felületen be lehet írni, például a zárolási képernyőn vagy a munka/profil jelszó kérésénél. A PIN ugyanúgy működik, mint a jelszó."</string>
+    <string name="secret_profile_pwd_enter_pin">Adja meg a titkos PIN-kódot</string>
+    <string name="secret_profile_pwd_confirm_pin">Erősítse meg a titkos PIN-kódot</string>
+    <string name="secret_profile_pwd_enter_password">Adja meg a titkos jelszót</string>
+    <string name="secret_profile_pwd_confirm_password">Erősítse meg a titkos jelszót</string>
+    <string name="secret_profile_pwd_action_add">Titkos PIN-kód és jelszó hozzáadása</string>
+    <string name="secret_profile_pwd_toast_added">Titkos PIN-kód és jelszó hozzáadva</string>
+    <string name="secret_profile_pwd_save_error">A titkos PIN-kód és jelszó nem került mentésre.\n\nRészletek:\n%1$s</string>
+    <string name="secret_profile_pwd_delete_error">A titkos PIN-kód és jelszó nem került törlésre.\n\nRészletek:\n%1$s</string>
+    <string name="secret_profile_pwd_save_info_text">"<b>Kérjük, ügyeljen arra, hogy olyan kódot adjon meg, amely eltér a feloldási PIN-kódjától/jelszavától.</b>
+\nFeltétlenül jegyezze meg az itt megadott jelszót, mivel <b>azt nem lehet frissíteni vagy módosítani.</b>
+\nHa már létezik titkos profil, <b>az törlésre kerül, és egy újjal lesz helyettesítve.</b>
+\nHa a felhasználói PIN-kód/jelszó helyett a titkos PIN-kódot/jelszót adja meg, a rendszer <b>azonnal átvált a titkos profilra.</b>
+\n\nHa a felhasználóváltás nincs engedélyezve, a munkamenet befejezése nélkül nem válthat át a titkos profilról."</string>
+    <string name="sim_action_esim_support_disabled_title">Nem lehet kikapcsolni az eSIM-et.</string>
+    <string name="exploit_protection_title">Kihasználás elleni védelem</string>
+    <string name="exploit_protection_summary">Eszköz- és alkalmazásbiztonsági fejlesztések</string>
+    <string name="cert_transparency_dl_title">Certificate Transparency letöltések</string>
+    <string name="cert_transparency_dl_grapheneos_server">GrapheneOS szerver</string>
+    <string name="cert_transparency_dl_standard_server">Standard (Google) szerver</string>
+    <string name="cert_transparency_dl_off">Ki</string>
+    <string name="geocoder_enabled_grapheneos_server">GrapheneOS szerver</string>
+</resources>
