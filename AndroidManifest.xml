@@ -3574,6 +3574,20 @@
                        android:value="true" />
         </activity>
 
+        <!-- Launched by explicit component from the Blutilities QS tile. -->
+        <activity
+            android:name="Settings$BluetoothDevelopmentSettingsActivity"
+            android:label="@string/bluetooth"
+            android:icon="@drawable/ic_settings_development"
+            android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.development.bluetooth.BluetoothDevelopmentSettingsFragment" />
+            <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
+                       android:value="@string/menu_key_system"/>
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
+                       android:value="true" />
+        </activity>
+
         <activity
             android:name="Settings$PrintSettingsActivity"
             android:label="@string/print_settings"

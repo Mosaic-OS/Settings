@@ -99,6 +99,7 @@ import com.android.settings.datausage.DataUsageSummary;
 import com.android.settings.datetime.DateTimeSettings;
 import com.android.settings.deletionhelper.AutomaticStorageManagerSettings;
 import com.android.settings.development.DevelopmentSettingsDashboardFragment;
+import com.android.settings.development.bluetooth.BluetoothDevelopmentSettingsFragment;
 import com.android.settings.deviceinfo.PrivateVolumeForget;
 import com.android.settings.deviceinfo.PublicVolumeSettings;
 import com.android.settings.deviceinfo.StorageDashboardFragment;
@@ -304,6 +305,7 @@ public class SettingsGateway {
             PrivateVolumeForget.class.getName(),
             PublicVolumeSettings.class.getName(),
             DevelopmentSettingsDashboardFragment.class.getName(),
+            BluetoothDevelopmentSettingsFragment.class.getName(),
             WifiDisplaySettings.class.getName(),
             PowerUsageSummary.class.getName(),
             PowerUsageAdvanced.class.getName(),
