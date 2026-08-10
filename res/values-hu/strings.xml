@@ -6360,4 +6360,5 @@
 
     <!-- Notification panel customization -->
     <string name="scrim_value_default">Alapértelmezett</string>
+    <string name="adb_permanently_disabled_summary">Véglegesen letiltva. Az ADB használatához állítsa vissza a készülék gyári beállításait.</string>
 </resources>

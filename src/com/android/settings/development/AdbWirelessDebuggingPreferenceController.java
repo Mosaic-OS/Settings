@@ -141,6 +141,7 @@ public class AdbWirelessDebuggingPreferenceController extends DeveloperOptionsPr
                 Settings.Global.ADB_WIFI_ENABLED, AdbPreferenceController.ADB_SETTING_OFF)
                     != AdbPreferenceController.ADB_SETTING_OFF;
         ((PrimarySwitchPreference) preference).setChecked(enabled);
+        AdbPreferenceController.applyPermanentLock(mContext, preference);
     }
 
     /**

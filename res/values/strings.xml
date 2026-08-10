@@ -15751,4 +15751,5 @@
     <string name="thin_label">Thin</string>
     <string name="thick_label">Thick</string>
 
+    <string name="adb_permanently_disabled_summary">Permanently disabled during setup. Factory reset this device to use ADB again.</string>
 </resources>

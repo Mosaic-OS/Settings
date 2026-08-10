@@ -18,10 +18,13 @@ package com.android.settings.development;
 
 
 import android.content.Context;
+import android.debug.AdbManager;
 
 import androidx.annotation.Nullable;
 import androidx.preference.Preference;
+import androidx.preference.TwoStatePreference;
 
+import com.android.settings.R;
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settingslib.development.AbstractEnableAdbPreferenceController;
 
@@ -42,6 +45,35 @@ public class AdbPreferenceController extends AbstractEnableAdbPreferenceControll
 
     public void onAdbDialogDismissed() {
         updateState(mPreference);
+    }
+
+    /** True once the user permanently disabled ADB; only a factory reset clears it. */
+    static boolean isAdbPermanentlyLocked(Context context) {
+        AdbManager adbManager = context.getSystemService(AdbManager.class);
+        return adbManager != null && adbManager.isAdbPermanentlyLocked();
+    }
+
+    static void applyPermanentLock(Context context, @Nullable Preference preference) {
+        if (preference == null || !isAdbPermanentlyLocked(context)) {
+            return;
+        }
+        if (preference instanceof TwoStatePreference) {
+            ((TwoStatePreference) preference).setChecked(false);
+        }
+        preference.setEnabled(false);
+        preference.setSummary(R.string.adb_permanently_disabled_summary);
+    }
+
+    @Override
+    public void updateState(Preference preference) {
+        super.updateState(preference);
+        applyPermanentLock(mContext, preference);
+    }
+
+    @Override
+    protected void onDeveloperOptionsSwitchEnabled() {
+        super.onDeveloperOptionsSwitchEnabled();
+        applyPermanentLock(mContext, mPreference);
     }
 
     @Override
