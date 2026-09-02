@@ -60,7 +60,6 @@ import com.android.settings.dashboard.RestrictedDashboardFragment;
 import com.android.settings.datausage.DataSaverBackend;
 import com.android.settings.flags.Flags;
 import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.wifi.WifiUtils;
 import com.android.settings.wifi.tether.WifiTetherPreferenceController;
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedSwitchPreference;
@@ -161,9 +160,8 @@ public class TetherSettings extends RestrictedDashboardFragment
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        if (!WifiUtils.isWifiMultiuserEnabled()) {
-            setIfOnlyAvailableForAdmins(true);
-        }
+        // Keep tethering configuration admin-only
+        setIfOnlyAvailableForAdmins(true);
         if (isUiRestricted()) {
             return;
         }
