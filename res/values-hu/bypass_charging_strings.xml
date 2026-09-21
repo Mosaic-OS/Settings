@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 The MosaicOS Project; SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="bypass_charging_title">Töltés megkerülése</string>
+    <string name="bypass_charging_held_level">Töltés szüneteltetve %1$s szinten</string>
+    <string name="bypass_charging_returns_to_limit">Visszaáll erre: Korlátozás %1$s-ra</string>
+    <string name="bypass_charging_returns_to_off">Visszaáll erre: Kikapcsolva</string>
+    <string name="bypass_charging_summary">Az aktuális töltöttségi szint tartása csatlakoztatott töltő mellett</string>
+    <string name="bypass_charging_waiting_for_power">Bekapcsolva · töltő csatlakoztatására vár</string>
+    <string name="bypass_charging_checking">Nem érhető el · várakozás a töltési szolgáltatásra</string>
+    <string name="bypass_charging_unavailable_service">Nem érhető el · hiányzik az akkumulátorszolgáltatás, az újbóli ellenőrzéshez indítsa újra az eszközt</string>
+    <string name="bypass_charging_unavailable_hal">Nem érhető el · az akkumulátorszolgáltatás hívása sikertelen; az újbóli ellenőrzéshez indítsa újra az eszközt</string>
+    <string name="bypass_charging_unavailable_readback">Nem érhető el · az akkumulátorszolgáltatás nem igazolta vissza a kért szintet; az újbóli ellenőrzéshez indítsa újra az eszközt</string>
+    <string name="bypass_charging_unavailable_level">Nem érhető el · az aktuális töltöttségi szint nem olvasható, az újbóli ellenőrzéshez indítsa újra az eszközt</string>
+    <string name="bypass_charging_unavailable_recovery">Nem érhető el · a töltési állapot visszaállítása sikertelen, válassza le a töltőt, és indítsa újra a telefont</string>
+    <string name="bypass_charging_applying">Töltési mód alkalmazása…</string>
+    <string name="bypass_charging_footer" formatted="false">A töltés megkerülése a bekapcsoláskor rögzített szinten tartja az akkumulátort, és a telefont a töltőről látja el energiával. Gyenge töltő használatakor a telefon továbbra is fogyaszthat az akkumulátorból. A célszint 1–99% közé esik, és minden csatlakoztatáskor, valamint csatlakoztatott töltő melletti újraindítás után újra rögzítésre kerül. A töltés megkerülése ideiglenesen felülírja a kiválasztott töltésoptimalizálási beállítást. Kikapcsolása megszünteti a szint tartását, és visszaállítja a korábbi választást. A kijelzett célszint a kért beállítást igazolja vissza, nem az akkumulátor nulla áramfelvételét.</string>
+</resources>

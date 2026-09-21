@@ -1,7 +1,15 @@
 package com.android.settings.fuelgauge;
 
 import android.content.Context;
+import android.database.ContentObserver;
+import android.ext.power.BatteryBypassCharging;
 import android.ext.power.BatteryChargeLimit;
+import android.os.Handler;
+import android.os.Looper;
+import android.provider.Settings;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.LifecycleOwner;
 import android.icu.text.NumberFormat;
 
 import com.android.settings.R;
@@ -13,6 +21,41 @@ public class BatteryChargingOptimizationPrefController extends BoolSettingFragme
 
     public BatteryChargingOptimizationPrefController(Context ctx, String key) {
         super(ctx, key, BatteryChargeLimit.getSetting());
+    }
+
+    private final ContentObserver mBypassObserver =
+            new ContentObserver(new Handler(Looper.getMainLooper())) {
+                @Override
+                public void onChange(boolean selfChange) {
+                    if (preference != null) {
+                        updateState(preference);
+                    }
+                }
+            };
+
+    @Override
+    public void onResume(@NonNull LifecycleOwner owner) {
+        super.onResume(owner);
+        mContext.getContentResolver().registerContentObserver(
+                Settings.Global.getUriFor(Settings.Global.BATTERY_BYPASS_STATE),
+                false, mBypassObserver);
+        if (preference != null) {
+            updateState(preference);
+        }
+    }
+
+    @Override
+    public void onPause(@NonNull LifecycleOwner owner) {
+        mContext.getContentResolver().unregisterContentObserver(mBypassObserver);
+        super.onPause(owner);
+    }
+
+    @Override
+    public CharSequence getSummary() {
+        if (BatteryBypassCharging.isEnabled(mContext)) {
+            return BatteryChargingOptimizationFragment.getBypassSummary(mContext);
+        }
+        return super.getSummary();
     }
 
     @Override

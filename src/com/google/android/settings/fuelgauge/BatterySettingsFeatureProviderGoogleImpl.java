@@ -1,6 +1,7 @@
 package com.google.android.settings.fuelgauge;
 
 import android.content.Context;
+import android.ext.power.BatteryBypassCharging;
 import android.ext.power.BatteryChargeLimit;
 
 import androidx.annotation.NonNull;
@@ -22,7 +23,8 @@ public class BatterySettingsFeatureProviderGoogleImpl extends BatterySettingsFea
 
     @Override
     public boolean isChargingOptimizationMode(@NonNull Context context, boolean isLongLife) {
-        return isLongLife && BatteryChargeLimit.isChargeLimitEnabled(context);
+        return BatteryBypassCharging.getHeldLevel(context) > 0
+                || (isLongLife && BatteryChargeLimit.isChargeLimitEnabled(context));
     }
 
     @Nullable
@@ -33,6 +35,11 @@ public class BatterySettingsFeatureProviderGoogleImpl extends BatterySettingsFea
             int pluggedStatus,
             long chargeRemainingTimeMs,
             long currentTimeMs) {
+        int held = BatteryBypassCharging.getHeldLevel(context);
+        if (held > 0) {
+            return context.getString(R.string.bypass_charging_held_level,
+                    android.icu.text.NumberFormat.getPercentInstance().format(held / 100f));
+        }
         if (batteryLevel >= BatteryChargeLimit.CHARGE_LEVEL) {
             return context.getString(R.string.charging_optimization_reach_limit_remaining_time_label);
         }
@@ -53,6 +60,11 @@ public class BatterySettingsFeatureProviderGoogleImpl extends BatterySettingsFea
             String batteryPercentageString,
             long chargeRemainingTimeMs,
             long currentTimeMs) {
+        int held = BatteryBypassCharging.getHeldLevel(context);
+        if (held > 0) {
+            return context.getString(R.string.bypass_charging_held_level,
+                    android.icu.text.NumberFormat.getPercentInstance().format(held / 100f));
+        }
         if (batteryLevel >= BatteryChargeLimit.CHARGE_LEVEL) {
             return context.getString(R.string.charging_optimization_reach_limit_charge_label,
                     batteryPercentageString);

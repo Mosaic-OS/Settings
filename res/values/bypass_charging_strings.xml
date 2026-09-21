@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 The MosaicOS Project; SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="bypass_charging_title">Bypass charging</string>
+    <string name="bypass_charging_held_level">Charging on hold at %1$s</string>
+    <string name="bypass_charging_returns_to_limit">Returns to: Limit to %1$s</string>
+    <string name="bypass_charging_returns_to_off">Returns to: Off</string>
+    <string name="bypass_charging_summary">Hold the current battery level while plugged in</string>
+    <string name="bypass_charging_waiting_for_power">Enabled · waiting for a power adapter</string>
+    <string name="bypass_charging_checking">Unavailable · waiting for the charging service</string>
+    <string name="bypass_charging_unavailable_service">Unavailable · battery service is missing, restart to check again</string>
+    <string name="bypass_charging_unavailable_hal">Unavailable · battery service call failed, restart to check again</string>
+    <string name="bypass_charging_unavailable_readback">Unavailable · the battery service did not confirm the requested level, restart to check again</string>
+    <string name="bypass_charging_unavailable_level">Unavailable · the current battery level could not be read, restart to check again</string>
+    <string name="bypass_charging_unavailable_recovery">Unavailable · charging state could not be restored, disconnect the adapter and restart the phone</string>
+    <string name="bypass_charging_applying">Applying charging mode…</string>
+    <string name="bypass_charging_footer" formatted="false">Bypass charging holds the battery at the level captured when enabled and powers the phone from the adapter. The phone may continue to draw power from the battery, if the adapter is weak. The target is limited to 1–99% and is captured again at each plug-in and after restarting the phone while plugged in. Bypass charging temporarily overrides your charging optimization choice. Turning bypass charging off clears the hold and restores your previous choice. The displayed target confirms the requested setting, not zero battery current.</string>
+</resources>
