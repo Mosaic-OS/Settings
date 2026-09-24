@@ -207,6 +207,7 @@ import com.android.settings.shortcut.CreateShortcut;
 import com.android.settings.sound.MediaControlsSettings;
 import com.android.settings.statusbar.NetworkTrafficSettingsFragment;
 import com.android.settings.statusbar.StatusBarSettingsFragment;
+import com.android.settings.statusbar.SystemIconsSettingsFragment;
 import com.android.settings.supervision.SupervisionDashboardFragment;
 import com.android.settings.support.SupportDashboardActivity;
 import com.android.settings.system.ResetDashboardFragment;
@@ -327,6 +328,7 @@ public class SettingsGateway {
             TorchSettingsFragment.class.getName(),
             StatusBarSettingsFragment.class.getName(),
             NetworkTrafficSettingsFragment.class.getName(),
+            SystemIconsSettingsFragment.class.getName(),
             ShadePanelsFragment.class.getName(),
             DataUsageSummary.class.getName(),
             DreamSettings.class.getName(),

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="status_bar_custom_icons">Status bar icons</string>
+    <string name="status_bar_custom_system_icons">System icons</string>
+    <string name="status_bar_custom_system_icons_summary">Control which status bar icons are shown</string>
+    <string name="status_bar_custom_connectivity">Connectivity</string>
+    <string name="status_bar_custom_sound">Sound &amp; alerts</string>
+    <string name="status_bar_custom_system">System</string>
+    <string name="status_bar_custom_protected_indicators">Microphone, camera, location and sensor privacy indicators are always protected. Recording and casting activity indicators cannot be hidden here.</string>
+    <string name="status_bar_custom_clock">Clock</string>
+    <string name="status_bar_custom_clock_position">Clock position</string>
+    <string name="status_bar_custom_clock_left">Left</string>
+    <string name="status_bar_custom_clock_center">Center</string>
+    <string name="status_bar_custom_clock_right">Right</string>
+    <string name="status_bar_custom_clock_seconds">Show seconds</string>
+    <string name="status_bar_custom_icon_alarm">Alarm</string>
+    <string name="status_bar_custom_icon_rotate">Rotation lock</string>
+    <string name="status_bar_custom_icon_headset">Headset</string>
+    <string name="status_bar_custom_icon_data_saver">Data Saver</string>
+    <string name="status_bar_custom_icon_ime">Keyboard switcher</string>
+    <string name="status_bar_custom_icon_tty">TTY</string>
+    <string name="status_bar_custom_icon_satellite">Satellite connection</string>
+    <string name="status_bar_custom_icon_work">Work profile</string>
+    <string name="status_bar_custom_icon_display">Connected display</string>
+    <string name="status_bar_custom_icon_vpn">VPN</string>
+    <string name="status_bar_custom_icon_bluetooth">Bluetooth</string>
+    <string name="status_bar_custom_icon_mute">Silent mode</string>
+    <string name="status_bar_custom_icon_vibrate">Vibrate mode</string>
+    <string name="status_bar_custom_icon_zen">Do Not Disturb</string>
+    <string name="status_bar_custom_icon_ethernet">Ethernet</string>
+    <string name="status_bar_custom_icon_hotspot">Hotspot</string>
+    <string name="status_bar_custom_icon_mobile">Mobile signal</string>
+    <string name="status_bar_custom_icon_wifi">Wi-Fi</string>
+    <string name="status_bar_custom_icon_airplane">Airplane mode</string>
+    <string name="status_bar_custom_icon_battery">Battery</string>
+    <string name="status_bar_custom_low_priority">Show low-priority notification icons</string>
+    <string name="status_bar_custom_low_priority_summary">When disabled, hides icons for notifications below low importance. Other notification visibility settings still apply.</string>
+</resources>

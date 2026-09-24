@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="status_bar_system_icons_screen"
+    android:title="@string/status_bar_custom_system_icons">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="status_bar_protected_indicators"
+        android:title="@string/status_bar_custom_protected_indicators"
+        android:selectable="false" />
+
+    <PreferenceCategory
+        android:key="status_bar_connectivity"
+        android:title="@string/status_bar_custom_connectivity" />
+
+    <PreferenceCategory
+        android:key="status_bar_sound"
+        android:title="@string/status_bar_custom_sound" />
+
+    <PreferenceCategory
+        android:key="status_bar_system"
+        android:title="@string/status_bar_custom_system" />
+
+    <PreferenceCategory
+        android:key="status_bar_notifications"
+        android:title="@string/notifications_label">
+
+        <com.android.settingslib.widget.AppSwitchPreference
+            android:key="mosaic_status_bar_hide_low_priority_icons"
+            android:title="@string/status_bar_custom_low_priority"
+            android:summary="@string/status_bar_custom_low_priority_summary"
+            android:icon="@drawable/ic_notification_silence"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

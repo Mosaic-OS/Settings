@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="status_bar_custom_icons">Állapotsor ikonok</string>
+    <string name="status_bar_custom_system_icons">Rendszerikonok</string>
+    <string name="status_bar_custom_system_icons_summary">Az állapotsorban megjelenő ikonok vezérlése</string>
+    <string name="status_bar_custom_connectivity">Kapcsolatok</string>
+    <string name="status_bar_custom_sound">Hangok és jelzések</string>
+    <string name="status_bar_custom_system">Rendszer</string>
+    <string name="status_bar_custom_protected_indicators">A mikrofon, a kamera, a helyadatok és az érzékelők adatvédelmi jelzései mindig védettek. A felvétel és az átküldés folyamatjelzői itt nem rejthetők el.</string>
+    <string name="status_bar_custom_clock">Óra</string>
+    <string name="status_bar_custom_clock_position">Az óra helye</string>
+    <string name="status_bar_custom_clock_left">Bal oldalon</string>
+    <string name="status_bar_custom_clock_center">Középen</string>
+    <string name="status_bar_custom_clock_right">Jobb oldalon</string>
+    <string name="status_bar_custom_clock_seconds">Másodpercek megjelenítése</string>
+    <string name="status_bar_custom_icon_alarm">Ébresztés</string>
+    <string name="status_bar_custom_icon_rotate">Elforgatás zárolása</string>
+    <string name="status_bar_custom_icon_headset">Fejhallgató</string>
+    <string name="status_bar_custom_icon_data_saver">Adatforgalom-csökkentő</string>
+    <string name="status_bar_custom_icon_ime">Billentyűzetváltó</string>
+    <string name="status_bar_custom_icon_tty">TTY</string>
+    <string name="status_bar_custom_icon_satellite">Műholdas kapcsolat</string>
+    <string name="status_bar_custom_icon_work">Munkahelyi profil</string>
+    <string name="status_bar_custom_icon_display">Csatlakoztatott kijelző</string>
+    <string name="status_bar_custom_icon_vpn">VPN</string>
+    <string name="status_bar_custom_icon_bluetooth">Bluetooth</string>
+    <string name="status_bar_custom_icon_mute">Néma üzemmód</string>
+    <string name="status_bar_custom_icon_vibrate">Rezgő üzemmód</string>
+    <string name="status_bar_custom_icon_zen">Ne zavarjanak</string>
+    <string name="status_bar_custom_icon_ethernet">Ethernet</string>
+    <string name="status_bar_custom_icon_hotspot">Hotspot</string>
+    <string name="status_bar_custom_icon_mobile">Mobilhálózati térerő</string>
+    <string name="status_bar_custom_icon_wifi">Wi-Fi</string>
+    <string name="status_bar_custom_icon_airplane">Repülő üzemmód</string>
+    <string name="status_bar_custom_icon_battery">Akkumulátor</string>
+    <string name="status_bar_custom_low_priority">Alacsony prioritású értesítési ikonok megjelenítése</string>
+    <string name="status_bar_custom_low_priority_summary">Kikapcsolva elrejti az alacsonynál kisebb fontosságú értesítések ikonjait. Az értesítések láthatóságának további beállításai továbbra is érvényesek.</string>
+</resources>
