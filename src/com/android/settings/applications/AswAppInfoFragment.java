@@ -115,10 +115,12 @@ public abstract class AswAppInfoFragment<T extends AppSwitch>
         var enabled = createEntry(ID_ON, adapter.getOnTitle(ctx));
         enabled.isChecked = !isDefault && state;
         enabled.isEnabled = enabled.isChecked || !isImmutable;
+        enabled.summary = getOnSummary();
 
         var disabled = createEntry(ID_OFF, adapter.getOffTitle(ctx));
         disabled.isChecked = !isDefault && !state;
         disabled.isEnabled = disabled.isChecked || !isImmutable;
+        disabled.summary = getOffSummary();
 
         if (isImmutable) {
             int immutabilityReason = si.getImmutabilityReason();
@@ -139,7 +141,7 @@ public abstract class AswAppInfoFragment<T extends AppSwitch>
 
         if (notifTogglePref != null) {
             notifTogglePref.isChecked = adapter.getAppSwitch().isNotificationEnabled(ps);
-            notifTogglePref.isEnabled = state;
+            notifTogglePref.isEnabled = adapter.isNotificationToggleEnabled(state);
         }
 
         return new Entry[] { def, enabled, disabled };
@@ -167,6 +169,16 @@ public abstract class AswAppInfoFragment<T extends AppSwitch>
 
     @Nullable
     protected CharSequence getSummaryForDefaultValueReason(int dvr) {
+        return null;
+    }
+
+    @Nullable
+    protected CharSequence getOnSummary() {
+        return null;
+    }
+
+    @Nullable
+    protected CharSequence getOffSummary() {
         return null;
     }
 
