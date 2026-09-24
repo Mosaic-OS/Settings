@@ -341,6 +341,34 @@ A jelszót a felhasználói jelszó helyett bármely jelszót igénylő felület
 \nHa már létezik titkos profil, <b>az törlésre kerül, és egy újjal lesz helyettesítve.</b>
 \nHa a felhasználói PIN-kód/jelszó helyett a titkos PIN-kódot/jelszót adja meg, a rendszer <b>azonnal átvált a titkos profilra.</b>
 \n\nHa a felhasználóváltás nincs engedélyezve, a munkamenet befejezése nélkül nem válthat át a titkos profilról."</string>
+	<string name="app_clipboard_read_title">Hozzáférés a vágólaphoz</string>
+    <string name="app_clipboard_read_summary">Szabályozza hogyan férnek hozzá az alkalmazások a vágólaphoz, és hogy megjelenjenek-e a hozzáférésről szóló üzenetek</string>
+    <string name="app_clipboard_read_intro">Válassza ki, mikor olvashatják az alkalmazások a vágólap tartalmát, és hogy megjelenjen-e üzenet a sikeres vagy blokkolt hozzáférés esetén.</string>
+    <string name="app_clipboard_read_messages_category_title">Üzenetek</string>
+    <string name="app_clipboard_read_app_access_category_title">Alkalmazás-hozzáférés</string>
+    <string name="app_default_clipboard_read_title">Alapértelmezett hozzáférés külső alkalmazások számára</string>
+    <string name="app_default_clipboard_read_description">Válassza ki a külső alkalmazások számára alapértelmezésként érvényes vágólap-hozzáférési módot. Ez az alapértelmezés az eszköz összes felhasználójára vonatkozik.</string>
+    <string name="app_default_clipboard_read_allowed_summary">A külső alkalmazások használat közben olvashatják más alkalmazások vágólap-tartalmait.</string>
+    <string name="app_default_clipboard_read_blocked_summary">A külső alkalmazások csak az általuk másolt vagy a beléjük beillesztett elemeket olvashatják.</string>
+    <string name="show_clip_access_denial_notification">Értesítés megjelenítése a vágólap-hozzáférés blokkolásakor</string>
+    <string name="show_clip_access_denial_notification_summary">Üzenet megjelenítése, ha egy alkalmazás hozzáférést kísérelt meg a vágólap tartalmához</string>
+    <string name="app_clipboard_read_apps_title">Alkalmazás-hozzáférés kezelése</string>
+    <string name="app_clipboard_read_apps_summary">Válassza ki, mely alkalmazások olvashatják a más alkalmazások által másolt elemeket anélkül, hogy Ön a „Beillesztés” funkciót használná</string>
+    <string name="app_default_clipboard_read_footer">"Az alkalmazások mindig olvashatják az aktuális vágólap-tartalmat, ha ők maguk másolták azt.
+
+Kompatibilitási okokból az alkalmazások továbbra is láthatják a vágólap metaadatait (például hogy létezik-e tartalom, mi a típusa, és mikor másolták). A képernyő tartalmát látni és kezelni képes, engedélyezett akadálymentesítési szolgáltatások kezdeményezhetnek beillesztést, és hozzáférhetnek a beillesztett tartalomhoz. Egyes alkalmazások és rendszerfunkciók - köztük az alapértelmezett beviteli mód - a beállításoktól függetlenül mindig hozzáférhetnek a vágólap tartalmához."</string>
+    <string name="app_clipboard_read_allowed">Engedélyezés</string>
+    <string name="app_clipboard_read_allowed_summary">Használat közben ez az alkalmazás hozzáférhet más alkalmazások vágólap-tartalmához</string>
+    <string name="app_clipboard_read_blocked">Csak beillesztés</string>
+    <string name="app_clipboard_read_blocked_summary">Ez az alkalmazás csak a saját maga által másolt vagy a felhasználó által beleillesztett tartalmakhoz férhet hozzá</string>
+    <string name="app_clipboard_read_dvr_default_setting">A rendszer vágólap-hozzáférési beállításának követése</string>
+    <string name="app_clipboard_read_ir_is_system_app">Ez a beállítás nem vonatkozik a rendszeralkalmazásokra</string>
+    <string name="app_clipboard_read_ir_is_default_ime">Az alapértelmezett beviteli mód mindig hozzáférhet a vágólaphoz</string>
+    <string name="app_clipboard_read_footer">"Figyelem: A „Beillesztés” funkció használata önmagában is okozhatja az alkalmazás működésének leállását. Ez a beállítás határozza meg, hogy az alkalmazás hozzáférhet-e más alkalmazások vágólap-tartalmaihoz (például szövegekhez, képekhez és hivatkozásokhoz).
+
+Kompatibilitási okokból az alkalmazás továbbra is láthatja a vágólap metaadatait, például azt, hogy létezik-e elem, mi annak a típusa, és mikor másolták ki. A képernyő tartalmát látni és azzal interakcióba lépni képes, engedélyezett akadálymentesítési szolgáltatások kezdeményezhetnek beillesztési műveleteket ebben az alkalmazásban, és hozzáférhetnek a beillesztett tartalomhoz."</string>
+    <string name="app_clipboard_read_shared_uid_warning">"A vágólap-hozzáférési beállítás, a blokkolt hozzáférésről szóló üzenet beállítása és az ideiglenes beillesztési hozzáférés közös az alábbi alkalmazásoknál:
+%1$s"</string>
     <string name="sim_action_esim_support_disabled_title">Nem lehet kikapcsolni az eSIM-et.</string>
     <string name="exploit_protection_title">Kihasználás elleni védelem</string>
     <string name="exploit_protection_summary">Eszköz- és alkalmazásbiztonsági fejlesztések</string>
