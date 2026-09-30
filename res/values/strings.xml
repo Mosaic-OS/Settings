@@ -15752,4 +15752,8 @@
     <string name="thick_label">Thick</string>
 
     <string name="adb_permanently_disabled_summary">Permanently disabled during setup. Factory reset this device to use ADB again.</string>
+
+    <!-- Fingerprint single attempt -->
+    <string name="fingerprint_single_attempt_title">Single attempt</string>
+    <string name="fingerprint_single_attempt_summary">If your fingerprint is not recognized, your PIN or password is required to unlock. An accidental touch can use up this attempt.</string>
 </resources>

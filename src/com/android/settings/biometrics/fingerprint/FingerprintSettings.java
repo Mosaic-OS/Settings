@@ -244,6 +244,8 @@ public class FingerprintSettings extends SubSettings {
                                 KEY_FINGERPRINT_UNLOCK_CATEGORY
                         ));
             }
+            controllers.add(new FingerprintSingleAttemptPreferenceController(context,
+                    FingerprintSingleAttemptPreferenceController.PREF_KEY));
             controllers.add(new FingerprintsEnrolledCategoryPreferenceController(context,
                     KEY_FINGERPRINTS_ENROLLED_CATEGORY));
             {
@@ -836,6 +838,14 @@ public class FingerprintSettings extends SubSettings {
             for (AbstractPreferenceController controller : mControllers) {
                 if (controller instanceof FingerprintSettingsPreferenceController) {
                     ((FingerprintSettingsPreferenceController) controller).setUserId(mUserId);
+                    if (controller instanceof FingerprintSingleAttemptPreferenceController c) {
+                        Preference preference = root.findPreference(c.getPreferenceKey());
+                        if (preference != null) {
+                            // onCreate re-inflates the screen, which drops this listener.
+                            preference.setOnPreferenceChangeListener(c);
+                            c.updateState(preference);
+                        }
+                    }
                 } else if (controller instanceof FingerprintUnlockCategoryController) {
                     ((FingerprintUnlockCategoryController) controller).setUserId(mUserId);
                 } else if (controller instanceof BiometricSecondFactorPinPreferenceController c) {

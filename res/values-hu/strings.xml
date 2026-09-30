@@ -6361,4 +6361,8 @@
     <!-- Notification panel customization -->
     <string name="scrim_value_default">Alapértelmezett</string>
     <string name="adb_permanently_disabled_summary">Véglegesen letiltva. Az ADB használatához állítsa vissza a készülék gyári beállításait.</string>
+
+    <!-- Fingerprint single attempt -->
+    <string name="fingerprint_single_attempt_title">Egyetlen próbálkozás</string>
+    <string name="fingerprint_single_attempt_summary">Ha az eszköz nem ismeri fel az ujjlenyomatát az első próbálkozáskor, a feloldáshoz meg kell adnia a PIN-kódját vagy jelszavát. Egy véletlen érintés is elhasználhatja ezt a próbálkozást.</string>
 </resources>

@@ -81,6 +81,13 @@
             settings:controller="com.android.settings.biometrics.fingerprint.FingerprintSettingsScreenOffUnlockUdfpsPreferenceController"
             settings:isPreferenceVisible="false"/>
 
+        <com.android.settingslib.RestrictedSwitchPreference
+            android:key="fingerprint_single_attempt"
+            android:title="@string/fingerprint_single_attempt_title"
+            android:summary="@string/fingerprint_single_attempt_summary"
+            android:persistent="false"
+            settings:controller="com.android.settings.biometrics.fingerprint.FingerprintSingleAttemptPreferenceController"/>
+
         <androidx.preference.Preference
             android:key="biometric_second_factor_pin"
             android:title="@string/biometric_second_factor_pin_title" />
