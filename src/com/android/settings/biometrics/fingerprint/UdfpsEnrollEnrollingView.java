@@ -106,6 +106,35 @@ public class UdfpsEnrollEnrollingView extends GlifLayout {
     }
 
     @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+        fitIllustrationAboveProgressRing();
+    }
+
+    // The ring follows the physical sensor, so on some devices it reaches into the illustration
+    private void fitIllustrationAboveProgressRing() {
+        final View illustration = findViewById(R.id.illustration_lottie);
+        if (!Flags.enrollLayoutTruncateImprovement() || mIsLandscape
+                || mUdfpsEnrollView == null || illustration == null
+                || mUdfpsEnrollView.getVisibility() == GONE
+                || illustration.getVisibility() != VISIBLE || illustration.getHeight() == 0) {
+            return;
+        }
+        final ImageView progressView = mUdfpsEnrollView.findViewById(
+                R.id.udfps_enroll_animation_fp_progress_view);
+        final int ringTop = getOnScreenPositionTop(progressView) + progressView.getPaddingTop();
+        final int available = ringTop - getOnScreenPositionTop(illustration);
+        final float scale = Math.max(0f,
+                Math.min(1f, (float) available / illustration.getHeight()));
+        if (illustration.getScaleY() != scale) {
+            illustration.setPivotX(illustration.getWidth() / 2f);
+            illustration.setPivotY(0f);
+            illustration.setScaleX(scale);
+            illustration.setScaleY(scale);
+        }
+    }
+
+    @Override
     protected View onInflateTemplate(LayoutInflater inflater, @LayoutRes int template) {
         final Configuration config = inflater.getContext().getResources().getConfiguration();
         if (Flags.enrollLayoutTruncateImprovement()
