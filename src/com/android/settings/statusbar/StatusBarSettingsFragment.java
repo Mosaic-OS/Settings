@@ -34,6 +34,7 @@ public class StatusBarSettingsFragment extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String CLOCK_POSITION_TAG = "StatusBarClockPosition";
+    private static final String QUICK_PULLDOWN_TAG = "StatusBarQuickPulldown";
     private static final String STATUS_BAR_QUICK_QS_PULLDOWN = "status_bar_quick_qs_pulldown";
 
     private static final int PULLDOWN_DIR_NONE = 0;
@@ -185,16 +186,47 @@ public class StatusBarSettingsFragment extends SettingsPreferenceFragment
                     getContentResolver(), CLOCK_SECONDS, (Boolean) newValue ? 1 : 0);
         }
         if (preference == mQuickPulldown) {
+            if (!(newValue instanceof String)) {
+                Log.w(QUICK_PULLDOWN_TAG, "Invalid quick pulldown selection type");
+                return false;
+            }
             final int val;
             try {
                 val = Integer.parseInt((String) newValue);
             } catch (NumberFormatException e) {
+                Log.w(QUICK_PULLDOWN_TAG, "Invalid quick pulldown selection");
                 return false;
             }
-            Settings.Secure.putInt(getContext().getContentResolver(),
-                    STATUS_BAR_QUICK_QS_PULLDOWN, val);
-            updateQuickPulldownSummary(val);
-            return true;
+            if (val < PULLDOWN_DIR_NONE || val > PULLDOWN_DIR_BOTH) {
+                Log.w(QUICK_PULLDOWN_TAG, "Quick pulldown selection out of range: " + val);
+                return false;
+            }
+            final ContentResolver resolver = preference.getContext().getContentResolver();
+            boolean writeSucceeded = false;
+            int readback = -1;
+            String writeError = "none";
+            String readError = "none";
+            try {
+                writeSucceeded = Settings.Secure.putInt(resolver, STATUS_BAR_QUICK_QS_PULLDOWN, val);
+            } catch (RuntimeException e) {
+                writeError = e.getClass().getSimpleName();
+            }
+            try {
+                readback = Settings.Secure.getInt(resolver, STATUS_BAR_QUICK_QS_PULLDOWN, -1);
+            } catch (RuntimeException e) {
+                readError = e.getClass().getSimpleName();
+            }
+            final boolean accepted = writeSucceeded && val == readback;
+            final String result = "selection chosen=" + val + " user=" + resolver.getUserId()
+                    + " write=" + writeSucceeded + " readback=" + readback + " accepted=" + accepted
+                    + " writeError=" + writeError + " readError=" + readError;
+            if (accepted) {
+                Log.d(QUICK_PULLDOWN_TAG, result);
+                updateQuickPulldownSummary(val);
+            } else {
+                Log.w(QUICK_PULLDOWN_TAG, result);
+            }
+            return accepted;
         }
         return false;
     }
