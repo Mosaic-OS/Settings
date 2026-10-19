@@ -220,6 +220,12 @@
     </Preference>
 
     <Preference
+        android:key="screenshot_protection"
+        android:title="@string/screenshot_protection_title"
+        android:order="-250"
+        android:fragment="com.android.settings.applications.specialaccess.ScreenshotProtectionSettings" />
+
+    <Preference
         android:key="turn_screen_on"
         android:title="@string/turn_screen_on_title"
         android:order="-200"

@@ -369,6 +369,7 @@ public class SettingsGateway {
             ManageExternalStorageDetails.class.getName(),
             WallpaperTypeSettings.class.getName(),
             VrListenerSettings.class.getName(),
+            com.android.settings.applications.specialaccess.ScreenshotProtectionSettings.class.getName(),
             PictureInPictureSettings.class.getName(),
             PictureInPictureDetails.class.getName(),
             PremiumSmsAccess.class.getName(),

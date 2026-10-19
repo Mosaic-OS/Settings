@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2026 The MosaicOS Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<resources>
+    <string name="screenshot_protection_title">Képernyőképek és felvétel</string>
+    <string name="screenshot_protection_intro">
+        Az alkalmazások 'Nincs engedélyezve' állapotot mutatnak, amint elrejtenek egy képernyőt a képernyőképek
+        elől. Az Ön által még meg nem nyitott alkalmazások addig 'Engedélyezve' állapotot mutatnak. Ön mindkét
+        beállítást módosíthatja.
+    </string>
+    <string name="screenshot_protection_confirm">
+        A(z) %1$s megjelenik a képernyőképeken, a képernyőfelvételeken, képernyőmegosztás és átküldés során (a
+        megosztást és felvételt végző alkalmazások továbbra is minden alkalommal az Ön engedélyét kérik),
+        valamint a legutóbbi alkalmazások előnézetében. A védett videók, DRM tartalmak továbbra is feketén jelenhetnek meg.
+    </string>
+    <string name="screenshot_protection_allow">Engedélyezés</string>
+    <string name="screenshot_protection_cancel">Mégse</string>
+    <string name="screenshot_protection_allowed">Engedélyezve</string>
+    <string name="screenshot_protection_not_allowed">Nincs engedélyezve</string>
+    <string name="screenshot_protection_admin_disabled">
+        Az Ön rendszergazdája letiltotta a képernyő rögzítését ennél a felhasználónál.
+    </string>
+    <string name="screenshot_protection_unavailable">
+        Ezek a beállítások átmenetileg nem érhetők el. Kérjük, nyissa meg újra ezt a képernyőt.
+    </string>
+    <string name="screenshot_protection_save_failed">
+        A módosítást nem sikerült megerősíteni. Kérjük, ellenőrizze a beállítást, és próbálja újra.
+    </string>
+    <string name="screenshot_protection_search">Alkalmazások keresése</string>
+    <string name="screenshot_protection_no_apps">Nem található alkalmazás.</string>
+    <string name="screenshot_protection_allowed_changed">Engedélyezve · Ön módosította</string>
+    <string name="screenshot_protection_not_allowed_changed">Nincs engedélyezve · Ön módosította</string>
+    <string name="screenshot_protection_dont_show_again">Ne jelenjen meg újra</string>
+</resources>
