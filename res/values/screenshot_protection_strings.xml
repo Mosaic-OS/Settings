@@ -18,8 +18,8 @@
 <resources>
     <string name="screenshot_protection_title">Screenshots &amp; recording</string>
     <string name="screenshot_protection_intro">
-        Apps are marked 'Not allowed' once they hide a screen from screenshots. Apps you have not opened yet show
-       'Allowed' until then. You can change either setting.
+        Apps are marked \'Not allowed\' once they hide a screen from screenshots. Apps you have not opened yet show
+       \'Allowed\' until then. You can change either setting.
     </string>
     <string name="screenshot_protection_confirm">
         %1$s will appear in screenshots, screen recordings, screen sharing and casting (sharing and recording

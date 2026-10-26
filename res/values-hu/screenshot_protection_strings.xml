@@ -18,8 +18,8 @@
 <resources>
     <string name="screenshot_protection_title">Képernyőképek és felvétel</string>
     <string name="screenshot_protection_intro">
-        Az alkalmazások 'Nincs engedélyezve' állapotot mutatnak, amint elrejtenek egy képernyőt a képernyőképek
-        elől. Az Ön által még meg nem nyitott alkalmazások addig 'Engedélyezve' állapotot mutatnak. Ön mindkét
+        Az alkalmazások \'Nincs engedélyezve\' állapotot mutatnak, amint elrejtenek egy képernyőt a képernyőképek
+        elől. Az Ön által még meg nem nyitott alkalmazások addig \'Engedélyezve\' állapotot mutatnak. Ön mindkét
         beállítást módosíthatja.
     </string>
     <string name="screenshot_protection_confirm">
