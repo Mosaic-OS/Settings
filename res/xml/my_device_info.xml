@@ -150,7 +150,7 @@
             android:key="mosaic_version"
             android:order="43"
             android:title="@string/mosaicos_version"
-            android:summary="17 - Stable 1.1"/>
+            android:summary="17 - Stable 1.2"/>
 
         <!-- Battery information -->
         <Preference
